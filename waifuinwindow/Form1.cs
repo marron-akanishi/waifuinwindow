@@ -17,10 +17,31 @@ namespace waifuinwindow {
         Point start, end;
         bool is_end = false;
         bool selmode = false;
+        Bitmap[] screen = new Bitmap[4];
 
         public Form1() {
             InitializeComponent();
             comboBox1.SelectedIndex = 2;
+            radioButton1.Select();
+        }
+
+        private int GetScreenId() {
+            // 指定したグループ内のラジオボタンでチェックされている物を取り出す
+            var RadioButtonChecked_InGroup = this.Controls.OfType<RadioButton>().SingleOrDefault(rb => rb.Checked == true);
+
+            // 結果
+            switch (RadioButtonChecked_InGroup.Text) {
+                case "1":
+                    return 0;
+                case "2":
+                    return 1;
+                case "3":
+                    return 2;
+                case "4":
+                    return 3;
+                default:
+                    return 0;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e) {
@@ -35,26 +56,29 @@ namespace waifuinwindow {
         }
 
         private void button2_Click(object sender, EventArgs e) {
-            Bitmap screen;
-            if (comboBox1.SelectedItem.ToString() == "DC") screen = window.CaptureWindowDC();
-            else if (comboBox1.SelectedItem.ToString() == "noDC") screen = window.CaptureWindow();
-            else screen = WindowController.Mouse.CaptureScreen(start, end);
+            Bitmap capture;
+            if (comboBox1.SelectedItem.ToString() == "DC") capture = window.CaptureWindowDC();
+            else if (comboBox1.SelectedItem.ToString() == "noDC") capture = window.CaptureWindow();
+            else capture = WindowController.Mouse.CaptureScreen(start, end);
+            screen[GetScreenId()] = capture;
             if (pictureBox1.Image != null) pictureBox1.Image.Dispose();
-            pictureBox1.Image = screen;
+            pictureBox1.Image = capture;
         }
 
         private void button3_Click(object sender, EventArgs e) {
-            if (pictureBox1.Image == null) return;
             var token = CoreTweet.Tokens.Create(twitter.GetValue("Twitter", "APIKey", "")
                 , twitter.GetValue("Twitter", "APISecret", "")
                 , twitter.GetValue("Twitter", "AccessToken", "")
                 , twitter.GetValue("Twitter", "AccessTokenSecret", ""));
-
-            MediaUploadResult first = token.Media.Upload(media: ConvertImageToBytes(pictureBox1.Image));
+            List<long> MediaId = new List<long>();
+            if (checkBox2.Checked) MediaId.Add(token.Media.Upload(media: ConvertImageToBytes(screen[0])).MediaId);
+            if (checkBox3.Checked) MediaId.Add(token.Media.Upload(media: ConvertImageToBytes(screen[1])).MediaId);
+            if (checkBox4.Checked) MediaId.Add(token.Media.Upload(media: ConvertImageToBytes(screen[2])).MediaId);
+            if (checkBox5.Checked) MediaId.Add(token.Media.Upload(media: ConvertImageToBytes(screen[3])).MediaId);
             string statustext = textBox2.Text;
             Status s = token.Statuses.Update(
                             status: statustext,
-                            media_ids: new long[] {first.MediaId}
+                            media_ids: MediaId
                         );
             textBox2.Text = "";
             button3.Text = "140";
@@ -145,6 +169,17 @@ namespace waifuinwindow {
                 }
             }
             selmode = false;
+        }
+
+        private void radioButton_CheckedChanged(object sender, EventArgs e) {
+            pictureBox1.Image = screen[GetScreenId()];
+        }
+
+        private void button7_Click(object sender, EventArgs e) {
+            if (pictureBox1.Image != null) pictureBox1.Image.Dispose();
+            pictureBox1.Image = null;
+            if (screen[GetScreenId()] != null) screen[GetScreenId()].Dispose();
+            screen[GetScreenId()] = null;
         }
 
         private void button6_Click(object sender, EventArgs e) {
