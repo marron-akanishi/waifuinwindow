@@ -52,7 +52,7 @@ namespace WindowController
 		/// </summary>
 		/// <param name="rectangle">クライアント領域内のキャプチャしたい領域。指定しない場合はクライアント領域全体をキャプチャする。</param>
 		/// <returns>キャプチャした画像データ</returns>
-		public Bitmap CaptureImage(Rectangle rectangle = default(Rectangle)) {
+		public Bitmap CaptureWindow(Rectangle rectangle = default(Rectangle)) {
             // ウィンドウが最小化されていた場合、もとに戻す
             // （ウィンドウが最小化されていると座標を取得できないから）
             this.Restore();
@@ -94,9 +94,9 @@ namespace WindowController
         }
 
         /// <summary>
-		/// ウィンドウのクライアント領域を画像としてキャプチャする
+		/// クライアント領域をDCを使ってキャプチャする
 		/// </summary>
-        public Bitmap CaptureScreen() {
+        public Bitmap CaptureWindowDC() {
             // ウィンドウを最前面に表示する（アクティブにはしない）
             this.BringWindowToTop();
             //アクティブなウィンドウのデバイスコンテキストを取得

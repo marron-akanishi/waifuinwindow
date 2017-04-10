@@ -57,7 +57,7 @@ namespace WindowController
 			public int left, top, right, bottom;
 		}
 
-		[DllImport("user32.dll")]
+        [DllImport("user32.dll")]
 		internal static extern bool ShowWindow(IntPtr hWnd, WindowShowStyle nCmdShow);
 
 		[DllImport("user32.dll")]
