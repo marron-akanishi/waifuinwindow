@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -11,10 +12,20 @@ namespace waifuinwindow {
         /// <summary>
         /// アプリケーションのメイン エントリ ポイントです。
         /// </summary>
+        /// 
+        static public Point DispSize;
+
         [STAThread]
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            //全ディスプレイを合わせたサイズを取得する
+            DispSize.X = 0;
+            DispSize.Y = 0;
+            foreach (System.Windows.Forms.Screen s in System.Windows.Forms.Screen.AllScreens) {
+                DispSize.X += s.Bounds.Width;
+                DispSize.Y += s.Bounds.Height;
+            }
             Application.Run(new Form1());
         }
     }
