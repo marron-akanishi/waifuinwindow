@@ -46,6 +46,8 @@
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.button7 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.checkBox6 = new System.Windows.Forms.CheckBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -102,7 +104,7 @@
             this.textBox2.MaxLength = 140;
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(230, 93);
+            this.textBox2.Size = new System.Drawing.Size(230, 71);
             this.textBox2.TabIndex = 5;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             this.textBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox2_KeyDown);
@@ -267,12 +269,33 @@
             this.label2.TabIndex = 24;
             this.label2.Text = "CapturedScreen";
             // 
+            // checkBox6
+            // 
+            this.checkBox6.AutoSize = true;
+            this.checkBox6.Location = new System.Drawing.Point(225, 401);
+            this.checkBox6.Name = "checkBox6";
+            this.checkBox6.Size = new System.Drawing.Size(60, 16);
+            this.checkBox6.TabIndex = 25;
+            this.checkBox6.Text = "footer：";
+            this.checkBox6.UseVisualStyleBackColor = true;
+            this.checkBox6.CheckedChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(282, 399);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(172, 19);
+            this.textBox3.TabIndex = 26;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
             // Form1
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(467, 455);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.checkBox6);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.radioButton4);
@@ -333,6 +356,8 @@
         private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.CheckBox checkBox6;
+        private System.Windows.Forms.TextBox textBox3;
     }
 }
 

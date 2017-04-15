@@ -75,6 +75,7 @@ namespace waifuinwindow {
             if (checkBox4.Checked && screen[2] != null) MediaId.Add(token.Media.Upload(media: ConvertImageToBytes(screen[2])).MediaId);
             if (checkBox5.Checked && screen[3] != null) MediaId.Add(token.Media.Upload(media: ConvertImageToBytes(screen[3])).MediaId);
             string statustext = textBox2.Text;
+            if (checkBox6.Checked) statustext += " " + textBox3.Text;
             Status s = token.Statuses.Update(
                             status: statustext,
                             media_ids: MediaId
@@ -105,7 +106,8 @@ namespace waifuinwindow {
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e) {
-            button3.Text = (140 - textBox2.Text.Length).ToString();
+            if (checkBox6.Checked) button3.Text = (140 - textBox2.Text.Length - textBox3.Text.Length).ToString();
+            else button3.Text = (140 - textBox2.Text.Length).ToString();
         }
 
         private void button4_Click(object sender, EventArgs e) {
@@ -175,13 +177,14 @@ namespace waifuinwindow {
                     is_end = true;
                     this.Capture = false;
                     WindowController.Mouse.SetMouseLButtonUp();
+                    label1.Text = "X:" + start.X + " Y:" + start.Y;
                 } else {
                     end.X = Cursor.Position.X;
                     end.Y = Cursor.Position.Y;
                     is_end = false;
                     this.Capture = false;
                     WindowController.Mouse.SetMouseLButtonUp();
-                    label1.Text = "X:" + start.X + " Y:" + start.Y + " W:" + (end.X - start.X) + " H:" + (end.Y - start.Y);
+                    label1.Text += " W:" + (end.X - start.X) + " H:" + (end.Y - start.Y);
                 }
             }
             selmode = false;
