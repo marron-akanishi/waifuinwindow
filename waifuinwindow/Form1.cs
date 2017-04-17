@@ -213,6 +213,11 @@ namespace waifuinwindow {
             if (keydowncalled) e.Handled = true;
         }
 
+        private void checkBox7_CheckedChanged(object sender, EventArgs e) {
+            if (checkBox7.Checked) window.SetWindowDispMode(2);
+            else window.SetWindowDispMode(3);
+        }
+
         private void button7_Click(object sender, EventArgs e) {
             if (pictureBox1.Image != null) pictureBox1.Image.Dispose();
             pictureBox1.Image = null;

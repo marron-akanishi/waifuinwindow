@@ -57,7 +57,7 @@ namespace WindowController
             // （ウィンドウが最小化されていると座標を取得できないから）
             this.Restore();
             // ウィンドウを最前面に表示する（アクティブにはしない）
-            this.BringWindowToTop();
+            this.SetWindowDispMode(1);
 
             // クライアント領域の左上のスクリーン座標を取得
             NativeCall.POINT screenPoint = new NativeCall.POINT(0, 0);
@@ -97,8 +97,6 @@ namespace WindowController
 		/// クライアント領域をDCを使ってキャプチャする
 		/// </summary>
         public Bitmap CaptureWindowDC() {
-            // ウィンドウを最前面に表示する（アクティブにはしない）
-            this.BringWindowToTop();
             //アクティブなウィンドウのデバイスコンテキストを取得
             IntPtr winDC = NativeCall.GetWindowDC(handle);
             //ウィンドウの大きさを取得
@@ -134,12 +132,26 @@ namespace WindowController
         }
 
         /// <summary>
-        /// 指定したウィンドウを最前面に表示する
+        /// 指定したウィンドウのモードを設定する
         /// </summary>
-        /// <param name="windowHandle"></param>
-        public void BringWindowToTop()
+        /// <param name="Mode">最前面設定</param>
+        public void SetWindowDispMode(int Mode)
         {
-            NativeCall.SetWindowPos(this.handle, (IntPtr)NativeCall.SpecialWindowHandles.HWND_TOP, 0, 0, 0, 0,
+            switch (Mode) {
+                case 1:
+                    SetWindowMode((IntPtr)NativeCall.SpecialWindowHandles.HWND_TOP);
+                    break;
+                case 2:
+                    SetWindowMode((IntPtr)NativeCall.SpecialWindowHandles.HWND_TOPMOST);
+                    break;
+                case 3:
+                    SetWindowMode((IntPtr)NativeCall.SpecialWindowHandles.HWND_NOTOPMOST);
+                    break;
+            }
+        }
+
+        private void SetWindowMode(IntPtr Mode) {
+            NativeCall.SetWindowPos(this.handle, Mode, 0, 0, 0, 0,
                 NativeCall.SetWindowPosFlags.SWP_NOACTIVATE |
                 NativeCall.SetWindowPosFlags.SWP_NOMOVE |
                 NativeCall.SetWindowPosFlags.SWP_NOSIZE |
@@ -147,5 +159,5 @@ namespace WindowController
                 NativeCall.SetWindowPosFlags.SWP_SHOWWINDOW
             );
         }
-	}
+    }
 }

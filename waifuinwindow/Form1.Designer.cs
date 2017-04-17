@@ -48,6 +48,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.checkBox6 = new System.Windows.Forms.CheckBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
+            this.checkBox7 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -115,9 +116,9 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(12, 425);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(68, 16);
+            this.checkBox1.Size = new System.Drawing.Size(91, 16);
             this.checkBox1.TabIndex = 6;
-            this.checkBox1.Text = "TopMost";
+            this.checkBox1.Text = "TopMost(Me)";
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
@@ -288,12 +289,24 @@
             this.textBox3.TabIndex = 26;
             this.textBox3.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
+            // checkBox7
+            // 
+            this.checkBox7.AutoSize = true;
+            this.checkBox7.Location = new System.Drawing.Point(109, 425);
+            this.checkBox7.Name = "checkBox7";
+            this.checkBox7.Size = new System.Drawing.Size(109, 16);
+            this.checkBox7.TabIndex = 27;
+            this.checkBox7.Text = "TopMost(Target)";
+            this.checkBox7.UseVisualStyleBackColor = true;
+            this.checkBox7.CheckedChanged += new System.EventHandler(this.checkBox7_CheckedChanged);
+            // 
             // Form1
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(467, 455);
+            this.Controls.Add(this.checkBox7);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.checkBox6);
             this.Controls.Add(this.label2);
@@ -358,6 +371,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckBox checkBox6;
         private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.CheckBox checkBox7;
     }
 }
 
