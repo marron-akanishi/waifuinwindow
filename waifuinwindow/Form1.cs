@@ -14,9 +14,6 @@ namespace waifuinwindow {
     public partial class Form1 : Form {
         WindowController.Window window;
         IniFile setting = new IniFile("./setting.ini");
-        Point start, end;
-        bool is_end = false;
-        bool selmode = false;
         private bool keydowncalled = false;
         Bitmap[] screen = new Bitmap[4];
         string SaveDir;
@@ -24,8 +21,10 @@ namespace waifuinwindow {
         public Form1() {
             InitializeComponent();
             this.Location = new Point(int.Parse(setting.GetValue("General", "PosX", "300")), int.Parse(setting.GetValue("General", "PosY", "300")));
-            if (this.Location.X >= Program.DispSize.X ||
-                this.Location.Y >= Program.DispSize.Y || this.Location.X < 0 || this.Location.Y < 0) {
+            if (this.Location.X + this.Width >= Program.DispSize.Width || 
+                this.Location.Y + this.Height >= Program.DispSize.Height || 
+                this.Location.X - this.Width < Program.DispSize.X || 
+                this.Location.Y - this.Height < Program.DispSize.Y) {
                 this.Location = new Point(300, 300);
             }
             if(bool.Parse(setting.GetValue("General", "TopMost", "False"))) {
@@ -44,21 +43,28 @@ namespace waifuinwindow {
         }
 
         private void button1_Click(object sender, EventArgs e) {
+            if (textBox1.Text == "") return;
             try {
                 window = new WindowController.Window(textBox1.Text);
-                this.Text = textBox1.Text;
+                StatusLabel1.Text = textBox1.Text;
                 comboBox1.SelectedIndex = 0;
+                checkBox7.Checked = false;
             }
             catch (System.Exception ex){
-                this.Text = ex.Message;
+                StatusLabel1.Text = ex.Message;
             }
         }
 
         private void button2_Click(object sender, EventArgs e) {
             Bitmap capture;
-            if (comboBox1.SelectedIndex == 0) capture = window.CaptureWindowDC();
-            else if (comboBox1.SelectedIndex == 1) capture = window.CaptureWindow();
-            else capture = WindowController.Mouse.CaptureScreen(start, end);
+            try {
+                if (comboBox1.SelectedIndex == 0) capture = window.CaptureWindowDC();
+                else if (comboBox1.SelectedIndex == 1) capture = window.CaptureWindow();
+                else capture = WindowController.Mouse.CaptureScreen(Program.SelArea);
+            }
+            catch {
+                return;
+            }
             screen[GetScreenId()] = capture;
             if (pictureBox1.Image != null) pictureBox1.Image.Dispose();
             pictureBox1.Image = capture;
@@ -163,31 +169,12 @@ namespace waifuinwindow {
         }
 
         private void button5_Click(object sender, EventArgs e) {
-            this.Capture = true;
-            selmode = true;
-            Cursor.Current = Cursors.Cross;
-            WindowController.Mouse.SetMouseLButtonDown();
-        }
-
-        private void Form1_MouseUp(object sender, MouseEventArgs e) {
-            if (selmode) {
-                if (!is_end) {
-                    start.X = Cursor.Position.X;
-                    start.Y = Cursor.Position.Y;
-                    is_end = true;
-                    this.Capture = false;
-                    WindowController.Mouse.SetMouseLButtonUp();
-                    label1.Text = "X:" + start.X + " Y:" + start.Y;
-                } else {
-                    end.X = Cursor.Position.X;
-                    end.Y = Cursor.Position.Y;
-                    is_end = false;
-                    this.Capture = false;
-                    WindowController.Mouse.SetMouseLButtonUp();
-                    label1.Text += " W:" + (end.X - start.X) + " H:" + (end.Y - start.Y);
-                }
-            }
-            selmode = false;
+            Form2 AreaSel = new Form2();
+            AreaSel.ShowDialog(this);
+            this.label1.Text = "X:" + Program.SelArea.X.ToString();
+            this.label1.Text += " Y:" + Program.SelArea.Y.ToString();
+            this.label1.Text += " W:" + Program.SelArea.Width.ToString();
+            this.label1.Text += " H:" + Program.SelArea.Height.ToString();
         }
 
         private void radioButton_CheckedChanged(object sender, EventArgs e) {
@@ -199,6 +186,7 @@ namespace waifuinwindow {
             setting.SetValue("General", "PosY", this.Location.Y.ToString());
             setting.SetValue("General", "TopMost", this.TopMost.ToString());
             setting.SetValue("General", "SaveDir", SaveDir);
+            if (checkBox7.Checked) window.SetWindowDispMode(3);
         }
 
         private void textBox2_KeyDown(object sender, KeyEventArgs e) {

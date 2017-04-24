@@ -13,19 +13,18 @@ namespace waifuinwindow {
         /// アプリケーションのメイン エントリ ポイントです。
         /// </summary>
         /// 
-        static public Point DispSize;
+        static public Rectangle DispSize = new Rectangle(0, 0, 0, 0);
+        static public Rectangle SelArea = new Rectangle(0, 0, 0, 0);
 
         [STAThread]
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //全ディスプレイを合わせたサイズを取得する
-            DispSize.X = 0;
-            DispSize.Y = 0;
-            foreach (System.Windows.Forms.Screen s in System.Windows.Forms.Screen.AllScreens) {
-                DispSize.X += s.Bounds.Width;
-                DispSize.Y += s.Bounds.Height;
-            }
+            DispSize.X = (int)System.Windows.SystemParameters.VirtualScreenLeft;
+            DispSize.Y = (int)System.Windows.SystemParameters.VirtualScreenTop;
+            DispSize.Width = (int)System.Windows.SystemParameters.VirtualScreenWidth;
+            DispSize.Height = (int)System.Windows.SystemParameters.VirtualScreenHeight;
             Application.Run(new Form1());
         }
     }
