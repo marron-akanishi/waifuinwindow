@@ -171,10 +171,21 @@ namespace waifuinwindow {
         private void button5_Click(object sender, EventArgs e) {
             Form2 AreaSel = new Form2();
             AreaSel.ShowDialog(this);
+            AreaSel.Dispose();
             this.label1.Text = "X:" + Program.SelArea.X.ToString();
             this.label1.Text += " Y:" + Program.SelArea.Y.ToString();
             this.label1.Text += " W:" + Program.SelArea.Width.ToString();
             this.label1.Text += " H:" + Program.SelArea.Height.ToString();
+            Bitmap capture;
+            try {
+                capture = WindowController.Mouse.CaptureScreen(Program.SelArea);
+            }
+            catch {
+                return;
+            }
+            screen[GetScreenId()] = capture;
+            if (pictureBox1.Image != null) pictureBox1.Image.Dispose();
+            pictureBox1.Image = capture;
         }
 
         private void radioButton_CheckedChanged(object sender, EventArgs e) {

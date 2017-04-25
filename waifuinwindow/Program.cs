@@ -16,18 +16,33 @@ namespace waifuinwindow {
         static public Rectangle DispSize = new Rectangle(0, 0, 0, 0);
         static public Rectangle SelArea = new Rectangle(0, 0, 0, 0);
 
+        const int LOGPIXELSX = 88;
+        [DllImport("user32.dll")]
+        extern static bool SetProcessDPIAware();
+        [DllImport("user32.dll")]
+        extern static IntPtr GetWindowDC(IntPtr hwnd);
+        [DllImport("gdi32.dll")]
+        extern static int GetDeviceCaps(IntPtr hdc, int index);
+        [DllImport("user32.dll")]
+        extern static int ReleaseDC(IntPtr hwnd, IntPtr hdc);
+
         [STAThread]
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //全ディスプレイを合わせたサイズを取得する
+            SetProcessDPIAware();
+            var dc = GetWindowDC(IntPtr.Zero);
+            double dpi = GetDeviceCaps(dc, LOGPIXELSX);
+            ReleaseDC(IntPtr.Zero, dc);
             DispSize.X = (int)System.Windows.SystemParameters.VirtualScreenLeft;
             DispSize.Y = (int)System.Windows.SystemParameters.VirtualScreenTop;
-            DispSize.Width = (int)System.Windows.SystemParameters.VirtualScreenWidth;
-            DispSize.Height = (int)System.Windows.SystemParameters.VirtualScreenHeight;
+            DispSize.Width = (int)(System.Windows.SystemParameters.VirtualScreenWidth * dpi/96);
+            DispSize.Height = (int)(System.Windows.SystemParameters.VirtualScreenHeight * dpi / 96);
             Application.Run(new Form1());
         }
     }
+
 
     public class IniFile {
         [DllImport("kernel32.dll")]
