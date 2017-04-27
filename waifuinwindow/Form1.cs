@@ -12,9 +12,10 @@ using System.Drawing.Imaging;
 
 namespace waifuinwindow {
     public partial class Form1 : Form {
+        public IniFile setting = new IniFile("./setting.ini");
+        bool Authed = true;
         WindowController.Window window;
-        IniFile setting = new IniFile("./setting.ini");
-        private bool keydowncalled = false;
+        bool keydowncalled = false;
         Bitmap[] screen = new Bitmap[4];
         string SaveDir;
 
@@ -30,6 +31,10 @@ namespace waifuinwindow {
             if(bool.Parse(setting.GetValue("General", "TopMost", "False"))) {
                 this.TopMost = true;
                 checkBox1.Checked = true;
+            }
+            if(bool.Parse(setting.GetValue("Twitter", "Auth", "False")) == false) {
+                button3.Text = "認証";
+                Authed = false;             
             }
             SaveDir = setting.GetValue("General", "SaveDir", "");
             comboBox1.SelectedIndex = 2;
@@ -71,8 +76,21 @@ namespace waifuinwindow {
         }
 
         private void button3_Click(object sender, EventArgs e) {
-            var token = CoreTweet.Tokens.Create(setting.GetValue("Twitter", "APIKey", "")
-                , setting.GetValue("Twitter", "APISecret", "")
+            // 認証
+            if(Authed == false) {
+                if(MessageBox.Show("Twitter認証がされていません。\n認証を行いますか？","確認",MessageBoxButtons.OKCancel,MessageBoxIcon.Question) == DialogResult.OK) {
+                    Form3 OAuth = new Form3();
+                    OAuth.ShowDialog(this);
+                    Authed = true;
+                    textBox2_TextChanged(null, null);
+                    return;
+                } else {
+                    return;
+                }
+            }
+            // 固まるからどうにかしなければ
+            var token = CoreTweet.Tokens.Create(DecodeKey.GetKey(1)
+                , DecodeKey.GetKey(2)
                 , setting.GetValue("Twitter", "AccessToken", "")
                 , setting.GetValue("Twitter", "AccessTokenSecret", ""));
             List<long> MediaId = new List<long>();
