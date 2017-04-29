@@ -34,6 +34,7 @@ namespace waifuinwindow {
             }
             if(bool.Parse(setting.GetValue("Twitter", "Auth", "False")) == false) {
                 button3.Text = "認証";
+                TweetLabel1.Text = "認証を行ってください";
                 Authed = false;             
             }
             SaveDir = setting.GetValue("General", "SaveDir", "");
@@ -83,29 +84,54 @@ namespace waifuinwindow {
                     OAuth.ShowDialog(this);
                     Authed = true;
                     textBox2_TextChanged(null, null);
+                    TweetLabel1.Text = "認証済み";
                     return;
                 } else {
                     return;
                 }
             }
             // 固まるからどうにかしなければ
-            var token = CoreTweet.Tokens.Create(DecodeKey.GetKey(1)
-                , DecodeKey.GetKey(2)
-                , setting.GetValue("Twitter", "AccessToken", "")
-                , setting.GetValue("Twitter", "AccessTokenSecret", ""));
+            Tokens token = null;
+            try {
+                token = CoreTweet.Tokens.Create(DecodeKey.GetKey(1)
+                    , DecodeKey.GetKey(2)
+                    , setting.GetValue("Twitter", "AccessToken", "")
+                    , setting.GetValue("Twitter", "AccessTokenSecret", ""));
+            }
+            catch {
+                TweetLabel1.Text = "トークンエラー";
+                MessageBox.Show("トークンの生成に失敗しました\nこのエラーが複数回出る場合はsetting.iniを一度削除してください", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             List<long> MediaId = new List<long>();
-            if (checkBox2.Checked && screen[0] != null) MediaId.Add(token.Media.Upload(media: ConvertImageToBytes(screen[0])).MediaId);
-            if (checkBox3.Checked && screen[1] != null) MediaId.Add(token.Media.Upload(media: ConvertImageToBytes(screen[1])).MediaId);
-            if (checkBox4.Checked && screen[2] != null) MediaId.Add(token.Media.Upload(media: ConvertImageToBytes(screen[2])).MediaId);
-            if (checkBox5.Checked && screen[3] != null) MediaId.Add(token.Media.Upload(media: ConvertImageToBytes(screen[3])).MediaId);
+            TweetLabel1.Text = "ツイートを送信中";
+            try {
+                if (checkBox2.Checked && screen[0] != null) MediaId.Add(token.Media.Upload(media: ConvertImageToBytes(screen[0])).MediaId);
+                if (checkBox3.Checked && screen[1] != null) MediaId.Add(token.Media.Upload(media: ConvertImageToBytes(screen[1])).MediaId);
+                if (checkBox4.Checked && screen[2] != null) MediaId.Add(token.Media.Upload(media: ConvertImageToBytes(screen[2])).MediaId);
+                if (checkBox5.Checked && screen[3] != null) MediaId.Add(token.Media.Upload(media: ConvertImageToBytes(screen[3])).MediaId);
+            }
+            catch {
+                TweetLabel1.Text = "送信エラー";
+                MessageBox.Show("画像の送信に失敗しました\n画像のサイズが大きすぎる可能性があります", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             string statustext = textBox2.Text;
             if (checkBox6.Checked) statustext += " " + textBox3.Text;
-            Status s = token.Statuses.Update(
-                            status: statustext,
-                            media_ids: MediaId
-                        );
+            if (statustext == "" && MediaId.Count == 0) return;
+            try {
+                Status s = token.Statuses.Update(
+                                status: statustext,
+                                media_ids: MediaId
+                            );
+            }
+            catch {
+                TweetLabel1.Text = "送信エラー";
+                MessageBox.Show("ツイートの送信に失敗しました\nツイートが140文字を超えている可能性があります", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             textBox2.Text = "";
             button3.Text = "140";
+            TweetLabel1.Text = "送信完了";
         }
 
         public static byte[] ConvertImageToBytes(System.Drawing.Image img) {

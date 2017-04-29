@@ -51,6 +51,7 @@
             this.checkBox7 = new System.Windows.Forms.CheckBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.StatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.TweetLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -306,7 +307,8 @@
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.StatusLabel1});
+            this.StatusLabel1,
+            this.TweetLabel1});
             this.statusStrip1.Location = new System.Drawing.Point(0, 450);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(467, 22);
@@ -319,6 +321,14 @@
             this.StatusLabel1.Name = "StatusLabel1";
             this.StatusLabel1.Size = new System.Drawing.Size(55, 17);
             this.StatusLabel1.Text = "準備完了";
+            // 
+            // TweetLabel1
+            // 
+            this.TweetLabel1.Name = "TweetLabel1";
+            this.TweetLabel1.Size = new System.Drawing.Size(366, 17);
+            this.TweetLabel1.Spring = true;
+            this.TweetLabel1.Text = "認証済み";
+            this.TweetLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // Form1
             // 
@@ -396,6 +406,7 @@
         private System.Windows.Forms.CheckBox checkBox7;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel StatusLabel1;
+        private System.Windows.Forms.ToolStripStatusLabel TweetLabel1;
     }
 }
 
