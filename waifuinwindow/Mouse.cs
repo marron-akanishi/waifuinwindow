@@ -1,33 +1,7 @@
-﻿using System;
-using System.Diagnostics;
-using System.Drawing;
-using System.Runtime.InteropServices;
+﻿using System.Drawing;
 
 namespace WindowController {
     public class Mouse {
-        internal class NativeMethods {
-            [DllImport("user32.dll")]
-            extern public static void
-              mouse_event(int dwFlags, int dx, int dy, int dwData, int dwExtraInfo);
-            [DllImport("user32.dll")]
-            extern public static int GetMessageExtraInfo();
-
-            public const int MOUSEEVENTF_LEFTDOWN = 0x0002;
-            public const int MOUSEEVENTF_LEFTUP = 0x0004;
-        }
-
-        public static void SetMouseLButtonDown() {
-            NativeMethods.mouse_event(
-              NativeMethods.MOUSEEVENTF_LEFTDOWN,
-              0, 0, 0, NativeMethods.GetMessageExtraInfo());
-        }
-
-        public static void SetMouseLButtonUp() {
-            NativeMethods.mouse_event(
-              NativeMethods.MOUSEEVENTF_LEFTUP,
-              0, 0, 0, NativeMethods.GetMessageExtraInfo());
-        }
-
         /// <summary>
 		/// 選択した領域を画像としてキャプチャする
 		/// </summary>
