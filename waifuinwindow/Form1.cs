@@ -12,32 +12,26 @@ using System.Drawing.Imaging;
 
 namespace waifuinwindow {
     public partial class Form1 : Form {
-        public IniFile setting = new IniFile("./setting.ini");
-        bool Authed = true;
-        WindowController.Window window;
+        public IniFile Setting = new IniFile("./setting.ini");
+        WindowController.Window Target;
         bool keydowncalled = false;
         Bitmap[] screen = new Bitmap[4];
-        string SaveDir;
+        Dictionary<string, string> WindowList = new Dictionary<string, string>();
 
         public Form1() {
             InitializeComponent();
-            this.Location = new Point(int.Parse(setting.GetValue("General", "PosX", "300")), int.Parse(setting.GetValue("General", "PosY", "300")));
-            if (this.Location.X >= Program.DispSize.Width || 
-                this.Location.Y >= Program.DispSize.Height || 
-                this.Location.X < Program.DispSize.X || 
-                this.Location.Y < Program.DispSize.Y) {
+            this.Location = new Point(int.Parse(Setting.GetValue("General", "PosX", "300")), int.Parse(Setting.GetValue("General", "PosY", "300")));
+            if (this.Location.X - 100 >= Program.DispSize.Width || this.Location.Y - 100 >= Program.DispSize.Height) {
                 this.Location = new Point(300, 300);
             }
-            if(bool.Parse(setting.GetValue("General", "TopMost", "False"))) {
+            if(bool.Parse(Setting.GetValue("General", "TopMost", "False"))) {
                 this.TopMost = true;
                 TopMost_Me.Checked = true;
             }
-            if(bool.Parse(setting.GetValue("Twitter", "Auth", "False")) == false) {
+            if(bool.Parse(Setting.GetValue("Twitter", "Auth", "False")) == false) {
                 TweetButton.Text = "認証";
-                TweetStatus.Text = "認証を行ってください";
-                Authed = false;             
+                TweetStatus.Text = "認証を行ってください";           
             }
-            SaveDir = setting.GetValue("General", "SaveDir", "");
             ModeSelect.SelectedIndex = 2;
             Screen1.Select();
             UpdateButton_Click(null, null);
@@ -52,7 +46,11 @@ namespace waifuinwindow {
         private void exeSetButton_Click(object sender, EventArgs e) {
             if (exeName.Text == "") return;
             try {
-                window = new WindowController.Window(exeName.Text);
+                exeName.Text = WindowList[exeName.Text];
+            }
+            catch { }
+            try {
+                Target = new WindowController.Window(exeName.Text);
                 StatusLabel1.Text = exeName.Text;
                 ModeSelect.SelectedIndex = 0;
                 TopMost_Target.Checked = false;
@@ -66,8 +64,8 @@ namespace waifuinwindow {
             Bitmap capture;
             this.Opacity = 0;
             try {
-                if (ModeSelect.SelectedIndex == 0) capture = window.CaptureWindowDC();
-                else if (ModeSelect.SelectedIndex == 1) capture = window.CaptureWindow();
+                if (ModeSelect.SelectedIndex == 0) capture = Target.CaptureWindowDC();
+                else if (ModeSelect.SelectedIndex == 1) capture = Target.CaptureWindow();
                 else capture = WindowController.Mouse.CaptureScreen(Program.SelArea);
             }
             catch {
@@ -82,17 +80,15 @@ namespace waifuinwindow {
 
         private void TweetButton_Click(object sender, EventArgs e) {
             // 認証
-            if(Authed == false) {
-                if(MessageBox.Show("Twitter認証がされていません。\n認証を行いますか？","確認",MessageBoxButtons.OKCancel,MessageBoxIcon.Question) == DialogResult.OK) {
+            if(!Convert.ToBoolean(Setting.GetValue("Twitter", "Auth", "False"))) {
+                if (MessageBox.Show("Twitter認証がされていません。\n認証を行いますか？", "確認", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK) {
                     Form3 OAuth = new Form3();
                     OAuth.ShowDialog(this);
-                    Authed = true;
+                    Setting.SetValue("Twitter", "Auth", "True");
                     TweetText_TextChanged(null, null);
                     TweetStatus.Text = "認証済み";
-                    return;
-                } else {
-                    return;
                 }
+                return;
             }
             // 固まるからどうにかしなければ
             if(Convert.ToInt16(TweetButton.Text) < 0) {
@@ -103,20 +99,21 @@ namespace waifuinwindow {
             try {
                 token = CoreTweet.Tokens.Create(DecodeKey.GetKey(1)
                     , DecodeKey.GetKey(2)
-                    , setting.GetValue("Twitter", "AccessToken", "")
-                    , setting.GetValue("Twitter", "AccessTokenSecret", ""));
+                    , Setting.GetValue("Twitter", "AccessToken", "")
+                    , Setting.GetValue("Twitter", "AccessTokenSecret", ""));
             }
             catch (System.Exception ex)  {
                 TweetStatus.Text = "トークンエラー";
                 MessageBox.Show("トークンの生成に失敗しました\nこのエラーが複数回出る場合はsetting.iniを一度削除してください\n" + ex.Message, "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
-            List<long> MediaId = new List<long>();
+            var MediaId = new List<long>();
             TweetStatus.Text = "ツイートを送信中";
             this.Refresh();
-            if (Image1.Checked && screen[0] != null) MediaId.Add(token.Media.Upload(media: ConvertImageToBytes(screen[0], Resize50.Checked)).MediaId);
-            if (Image2.Checked && screen[1] != null) MediaId.Add(token.Media.Upload(media: ConvertImageToBytes(screen[1], Resize50.Checked)).MediaId);
-            if (Image3.Checked && screen[2] != null) MediaId.Add(token.Media.Upload(media: ConvertImageToBytes(screen[2], Resize50.Checked)).MediaId);
-            if (Image4.Checked && screen[3] != null) MediaId.Add(token.Media.Upload(media: ConvertImageToBytes(screen[3], Resize50.Checked)).MediaId);
+            if (Image1.Checked && screen[0] != null) MediaId.Add(token.Media.Upload(media: ConvertImageToBytes(screen[0])).MediaId);
+            if (Image2.Checked && screen[1] != null) MediaId.Add(token.Media.Upload(media: ConvertImageToBytes(screen[1])).MediaId);
+            if (Image3.Checked && screen[2] != null) MediaId.Add(token.Media.Upload(media: ConvertImageToBytes(screen[2])).MediaId);
+            if (Image4.Checked && screen[3] != null) MediaId.Add(token.Media.Upload(media: ConvertImageToBytes(screen[3])).MediaId);
             string statustext = TweetText.Text;
             if (FooterMode.Checked) statustext += " " + FooterText.Text;
             if (statustext == "" && MediaId.Count == 0) {
@@ -139,12 +136,12 @@ namespace waifuinwindow {
             TweetStatus.Text = "送信完了";
         }
 
-        public static byte[] ConvertImageToBytes(System.Drawing.Image img,bool isResize=false) {
+        private byte[] ConvertImageToBytes(Image img) {
             // 入力引数の異常時のエラー処理
             if (img == null) return null;
             byte[] ImageBytes;
             // リサイズ処理
-            if (isResize) {
+            if (Resize50.Checked) {
                 Bitmap canvas = new Bitmap(img.Width/2, img.Height/2);
                 //ImageオブジェクトのGraphicsオブジェクトを作成する
                 Graphics g = Graphics.FromImage(canvas);
@@ -188,7 +185,7 @@ namespace waifuinwindow {
                                                                     .Replace('/','-')
                                                                     .Replace(' ', '_')
                                                                     .Replace(':','-');
-            sfd.InitialDirectory = SaveDir;
+            sfd.InitialDirectory = Setting.GetValue("General", "SaveDir");
             //[ファイルの種類]に表示される選択肢を指定する
             sfd.Filter = "PNGファイル(*.png)|*.png";
             //タイトルを設定する
@@ -196,7 +193,7 @@ namespace waifuinwindow {
             //ダイアログを表示する
             if (sfd.ShowDialog() == DialogResult.OK) {
                 capturedImage.Image.Save(sfd.FileName, ImageFormat.Png);
-                SaveDir = System.IO.Path.GetDirectoryName(sfd.FileName);
+                Setting.SetValue("General", "SaveDir", System.IO.Path.GetDirectoryName(sfd.FileName));
             }
         }
 
@@ -261,11 +258,10 @@ namespace waifuinwindow {
         }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e) {
-            setting.SetValue("General", "PosX", this.Location.X.ToString());
-            setting.SetValue("General", "PosY", this.Location.Y.ToString());
-            setting.SetValue("General", "TopMost", this.TopMost.ToString());
-            setting.SetValue("General", "SaveDir", SaveDir);
-            if (TopMost_Target.Checked) window.SetWindowDispMode(3);
+            Setting.SetValue("General", "PosX", this.Location.X.ToString());
+            Setting.SetValue("General", "PosY", this.Location.Y.ToString());
+            Setting.SetValue("General", "TopMost", this.TopMost.ToString());
+            if (TopMost_Target.Checked) Target.SetWindowDispMode(3);
         }
 
         private void TweetText_KeyDown(object sender, KeyEventArgs e) {
@@ -281,8 +277,8 @@ namespace waifuinwindow {
         }
 
         private void TopMost_Target_CheckedChanged(object sender, EventArgs e) {
-            if (TopMost_Target.Checked) window.SetWindowDispMode(2);
-            else window.SetWindowDispMode(3);
+            if (TopMost_Target.Checked) Target.SetWindowDispMode(2);
+            else Target.SetWindowDispMode(3);
         }
 
         private void ClearButton_Click(object sender, EventArgs e) {
@@ -293,10 +289,16 @@ namespace waifuinwindow {
         }
 
         private void UpdateButton_Click(object sender, EventArgs e) {
+            WindowList.Clear();
+            exeName.Items.Clear();
             foreach (System.Diagnostics.Process p in System.Diagnostics.Process.GetProcesses()) {
-                //MainWindowHandleがゼロでないプロセスを探す
-                if (!IntPtr.Zero.Equals(p.MainWindowHandle)) {
-                    if(p.MainWindowTitle != "") exeName.Items.Add(p.ProcessName);
+                //プロセスを探す
+                if (!IntPtr.Zero.Equals(p.MainWindowHandle) && p.MainWindowTitle != "") {
+                    try {
+                        WindowList.Add(p.MainWindowTitle, p.ProcessName);
+                        exeName.Items.Add(p.MainWindowTitle);
+                    }
+                    catch { }
                 }
             }
         }
