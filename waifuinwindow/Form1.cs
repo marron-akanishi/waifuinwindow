@@ -133,7 +133,7 @@ namespace waifuinwindow {
             }
             TweetText.Text = "";
             TweetButton.Text = "140";
-            TweetStatus.Text = "送信完了";
+            TweetStatus.Text = "送信完了 - " + System.DateTime.Now.ToString("HH:mm:ss");
         }
 
         private byte[] ConvertImageToBytes(Image img) {
@@ -181,10 +181,7 @@ namespace waifuinwindow {
             if (capturedImage.Image == null) return;
             //SaveFileDialogクラスのインスタンスを作成
             SaveFileDialog sfd = new SaveFileDialog();
-            sfd.FileName = exeName.Text + "_" + System.DateTime.Now.ToString()
-                                                                    .Replace('/','-')
-                                                                    .Replace(' ', '_')
-                                                                    .Replace(':','-');
+            sfd.FileName = exeName.Text + "_" + System.DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
             sfd.InitialDirectory = Setting.GetValue("General", "SaveDir");
             //[ファイルの種類]に表示される選択肢を指定する
             sfd.Filter = "PNGファイル(*.png)|*.png";
