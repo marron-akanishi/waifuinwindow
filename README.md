@@ -4,3 +4,4 @@ waifu2xを使ってウィンドウを拡大するつもりが、ただ単に画�
 ダウンロードは上のreleasesからどうぞ  
 参考  
 https://github.com/castaneai/WindowController  
+http://anis774.net/codevault/hotkey.html
