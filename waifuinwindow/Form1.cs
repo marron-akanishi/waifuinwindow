@@ -12,29 +12,15 @@ using System.Drawing.Imaging;
 
 namespace waifuinwindow {
     public partial class Form1 : Form {
-        public IniFile Setting = new IniFile("./setting.ini");
+        public Setting MainIni = new Setting();
         WindowController.Window Target;
         bool keydowncalled = false;
         Bitmap[] screen = new Bitmap[4];
         Dictionary<string, string> WindowList = new Dictionary<string, string>();
+        HotKey hotKey;
 
         public Form1() {
             InitializeComponent();
-            this.Location = new Point(int.Parse(Setting.GetValue("General", "PosX", "300")), int.Parse(Setting.GetValue("General", "PosY", "300")));
-            if (this.Location.X - 100 >= Program.DispSize.Width || this.Location.Y - 100 >= Program.DispSize.Height) {
-                this.Location = new Point(300, 300);
-            }
-            if(bool.Parse(Setting.GetValue("General", "TopMost", "False"))) {
-                this.TopMost = true;
-                TopMost_Me.Checked = true;
-            }
-            if(bool.Parse(Setting.GetValue("Twitter", "Auth", "False")) == false) {
-                TweetButton.Text = "認証";
-                TweetStatus.Text = "認証を行ってください";           
-            }
-            ModeSelect.SelectedIndex = 2;
-            Screen1.Select();
-            UpdateButton_Click(null, null);
         }
 
         private int GetScreenId() {
@@ -62,6 +48,7 @@ namespace waifuinwindow {
 
         private void ImageCapButton_Click(object sender, EventArgs e) {
             Bitmap capture;
+            var player = new System.Media.SoundPlayer("./shutter.wav");
             this.Opacity = 0;
             try {
                 if (ModeSelect.SelectedIndex == 0) capture = Target.CaptureWindowDC();
@@ -73,18 +60,20 @@ namespace waifuinwindow {
                 return;
             }
             this.Opacity = 1;
+            if (MainIni.UseSound) player.Play();
             screen[GetScreenId()] = capture;
             if (capturedImage.Image != null) capturedImage.Image.Dispose();
             capturedImage.Image = capture;
+            player.Dispose();
         }
 
         private void TweetButton_Click(object sender, EventArgs e) {
             // 認証
-            if(!Convert.ToBoolean(Setting.GetValue("Twitter", "Auth", "False"))) {
+            if(!MainIni.Auth) {
                 if (MessageBox.Show("Twitter認証がされていません。\n認証を行いますか？", "確認", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK) {
                     Form3 OAuth = new Form3();
                     OAuth.ShowDialog(this);
-                    Setting.SetValue("Twitter", "Auth", "True");
+                    MainIni.Auth = true;
                     TweetText_TextChanged(null, null);
                     TweetStatus.Text = "認証済み";
                 }
@@ -97,10 +86,7 @@ namespace waifuinwindow {
             }
             Tokens token = null;
             try {
-                token = CoreTweet.Tokens.Create(DecodeKey.GetKey(1)
-                    , DecodeKey.GetKey(2)
-                    , Setting.GetValue("Twitter", "AccessToken", "")
-                    , Setting.GetValue("Twitter", "AccessTokenSecret", ""));
+                token = CoreTweet.Tokens.Create(DecodeKey.GetKey(1), DecodeKey.GetKey(2), MainIni.Token, MainIni.TokenSecret);
             }
             catch (System.Exception ex)  {
                 TweetStatus.Text = "トークンエラー";
@@ -182,7 +168,7 @@ namespace waifuinwindow {
             //SaveFileDialogクラスのインスタンスを作成
             SaveFileDialog sfd = new SaveFileDialog();
             sfd.FileName = exeName.Text + "_" + System.DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
-            sfd.InitialDirectory = Setting.GetValue("General", "SaveDir");
+            sfd.InitialDirectory = MainIni.SaveDir;
             //[ファイルの種類]に表示される選択肢を指定する
             sfd.Filter = "PNGファイル(*.png)|*.png";
             //タイトルを設定する
@@ -190,7 +176,7 @@ namespace waifuinwindow {
             //ダイアログを表示する
             if (sfd.ShowDialog() == DialogResult.OK) {
                 capturedImage.Image.Save(sfd.FileName, ImageFormat.Png);
-                Setting.SetValue("General", "SaveDir", System.IO.Path.GetDirectoryName(sfd.FileName));
+                MainIni.SaveDir = System.IO.Path.GetDirectoryName(sfd.FileName);
             }
         }
 
@@ -255,9 +241,10 @@ namespace waifuinwindow {
         }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e) {
-            Setting.SetValue("General", "PosX", this.Location.X.ToString());
-            Setting.SetValue("General", "PosY", this.Location.Y.ToString());
-            Setting.SetValue("General", "TopMost", this.TopMost.ToString());
+            MainIni.PosX = this.Location.X;
+            MainIni.PosY = this.Location.Y;
+            MainIni.TopMost = this.TopMost;
+            if (hotKey != null) hotKey.Dispose();
             if (TopMost_Target.Checked) Target.SetWindowDispMode(3);
         }
 
@@ -278,13 +265,6 @@ namespace waifuinwindow {
             else Target.SetWindowDispMode(3);
         }
 
-        private void ClearButton_Click(object sender, EventArgs e) {
-            if (capturedImage.Image != null) capturedImage.Image.Dispose();
-            capturedImage.Image = null;
-            if (screen[GetScreenId()] != null) screen[GetScreenId()].Dispose();
-            screen[GetScreenId()] = null;
-        }
-
         private void UpdateButton_Click(object sender, EventArgs e) {
             WindowList.Clear();
             exeName.Items.Clear();
@@ -298,6 +278,43 @@ namespace waifuinwindow {
                     catch { }
                 }
             }
+        }
+
+        private void SettingButton_Click(object sender, EventArgs e) {
+            Form SettingWindow = new Form4();
+            SettingWindow.ShowDialog(this);
+            if (MainIni.UseShortcut) {
+                if (hotKey != null) hotKey.Dispose();
+                SetHotkey();
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e) {
+            this.Location = new Point(MainIni.PosX, MainIni.PosY);
+            if (this.Location.X - 100 >= Program.DispSize.Width || this.Location.Y - 100 >= Program.DispSize.Height) {
+                this.Location = new Point(300, 300);
+            }
+            if (MainIni.TopMost) {
+                this.TopMost = true;
+                TopMost_Me.Checked = true;
+            }
+            if (!MainIni.Auth) {
+                TweetButton.Text = "認証";
+                TweetStatus.Text = "認証を行ってください";
+            }
+            ModeSelect.SelectedIndex = 2;
+            Screen1.Select();
+            UpdateButton_Click(null, null);
+            if (MainIni.UseShortcut) SetHotkey();
+        }
+
+        private void SetHotkey() {
+            MOD_KEY modKeys = 0;
+            if (MainIni.UseAlt) modKeys |= MOD_KEY.ALT;
+            if (MainIni.UseCtrl) modKeys |= MOD_KEY.CONTROL;
+            if (MainIni.UseShift) modKeys |= MOD_KEY.SHIFT;
+            hotKey = new HotKey(modKeys, Keys.F);
+            hotKey.HotKeyPush += new EventHandler(ImageCapButton_Click);
         }
     }
 }

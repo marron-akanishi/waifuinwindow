@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -43,69 +44,81 @@ namespace waifuinwindow {
         }
     }
 
+    /// <summary>
+    /// グローバルホットキーを登録するクラス。
+    /// 使用後は必ずDisposeすること。
+    /// </summary>
+    public class HotKey : IDisposable {
+        HotKeyForm form;
+        /// <summary>
+        /// ホットキーが押されると発生する。
+        /// </summary>
+        public event EventHandler HotKeyPush;
 
-    public class IniFile {
-        [DllImport("kernel32.dll")]
-        private static extern int GetPrivateProfileString(
-            string lpApplicationName,
-            string lpKeyName,
-            string lpDefault,
-            StringBuilder lpReturnedstring,
-            int nSize,
-            string lpFileName);
-
-        [DllImport("kernel32.dll")]
-        private static extern int WritePrivateProfileString(
-            string lpApplicationName,
-            string lpKeyName,
-            string lpstring,
-            string lpFileName);
-
-        string filePath;
-
-        /// <summary>
-        /// ファイル名を指定して初期化します。
-        /// ファイルが存在しない場合は初回書き込み時に作成されます。
-        /// </summary>
-        public IniFile(string filePath) {
-            this.filePath = filePath;
+        /// <summary>
+        /// ホットキーを指定して初期化する。
+        /// 使用後は必ずDisposeすること。
+        /// </summary>
+        /// <param name="modKey">修飾キー</param>
+        /// <param name="key">キー</param>
+        public HotKey(MOD_KEY modKey, Keys key) {
+            form = new HotKeyForm(modKey, key, raiseHotKeyPush);
         }
 
-        /// <summary>
-        /// sectionとkeyからiniファイルの設定値を取得、設定します。 
-        /// </summary>
-        /// <returns>指定したsectionとkeyの組合せが無い場合は""が返ります。</returns>
-        public string this[string section, string key] {
-            set {
-                WritePrivateProfileString(section, key, value, filePath);
-            }
-            get {
-                StringBuilder sb = new StringBuilder(256);
-                GetPrivateProfileString(section, key, string.Empty, sb, sb.Capacity, filePath);
-                return sb.ToString();
+        private void raiseHotKeyPush() {
+            if (HotKeyPush != null) {
+                HotKeyPush(this, EventArgs.Empty);
             }
         }
 
-        /// <summary>
-        /// sectionとkeyからiniファイルの設定値を取得します。
-        /// 指定したsectionとkeyの組合せが無い場合はdefaultvalueで指定した値が返ります。
-        /// </summary>
-        /// <returns>
-        /// 指定したsectionとkeyの組合せが無い場合はdefaultvalueで指定した値が返ります。
-        /// </returns>
-        public string GetValue(string section, string key, string defaultvalue = "") {
-            StringBuilder sb = new StringBuilder(256);
-            GetPrivateProfileString(section, key, defaultvalue, sb, sb.Capacity, filePath);
-            return sb.ToString();
+        public void Dispose() {
+            form.Dispose();
         }
 
-        /// <summary>
-        /// 指定されたsectionとkeyにデータを書き込みます。
-        /// 指定したsectionとkeyの組合せが無い場合は生成されます。
-        /// </summary>
-        public void SetValue(string section, string key, string value) {
-            WritePrivateProfileString(section, key, value, filePath);
-            return;
+        private class HotKeyForm : Form {
+            [DllImport("user32.dll")]
+            extern static int RegisterHotKey(IntPtr HWnd, int ID, MOD_KEY MOD_KEY, Keys KEY);
+
+            [DllImport("user32.dll")]
+            extern static int UnregisterHotKey(IntPtr HWnd, int ID);
+
+            const int WM_HOTKEY = 0x0312;
+            int id;
+            ThreadStart proc;
+
+            public HotKeyForm(MOD_KEY modKey, Keys key, ThreadStart proc) {
+                this.proc = proc;
+                for (int i = 0x0000; i <= 0xbfff; i++) {
+                    if (RegisterHotKey(this.Handle, i, modKey, key) != 0) {
+                        id = i;
+                        break;
+                    }
+                }
+            }
+
+            protected override void WndProc(ref Message m) {
+                base.WndProc(ref m);
+
+                if (m.Msg == WM_HOTKEY) {
+                    if ((int)m.WParam == id) {
+                        proc();
+                    }
+                }
+            }
+
+            protected override void Dispose(bool disposing) {
+                UnregisterHotKey(this.Handle, id);
+                base.Dispose(disposing);
+            }
         }
+    }
+
+    /// <summary>
+    /// HotKeyクラスの初期化時に指定する修飾キー
+    /// </summary>
+    public enum MOD_KEY : int {
+        ALT = 0x0001,
+        CONTROL = 0x0002,
+        SHIFT = 0x0004,
     }
 }

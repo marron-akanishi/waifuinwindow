@@ -36,9 +36,9 @@ namespace waifuinwindow {
                     return;
                 }
             }
-            ((Form1)this.Owner).Setting.SetValue("Twitter", "AccessToken", tokens.AccessToken);
-            ((Form1)this.Owner).Setting.SetValue("Twitter", "AccessTokenSecret", tokens.AccessTokenSecret);
-            ((Form1)this.Owner).Setting.SetValue("Twitter", "Auth", "True");
+            ((Form1)this.Owner).MainIni.Token = tokens.AccessToken;
+            ((Form1)this.Owner).MainIni.TokenSecret = tokens.AccessTokenSecret;
+            ((Form1)this.Owner).MainIni.Auth = true;
             this.Close();
         }
     }
