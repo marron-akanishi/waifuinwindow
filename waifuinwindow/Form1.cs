@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using CoreTweet;
 using System.Drawing.Imaging;
@@ -244,7 +240,10 @@ namespace waifuinwindow {
             MainIni.PosX = this.Location.X;
             MainIni.PosY = this.Location.Y;
             MainIni.TopMost = this.TopMost;
-            if (hotKey != null) hotKey.Dispose();
+            try {
+                hotKey.Dispose();
+            }
+            catch { }
             if (TopMost_Target.Checked) Target.SetWindowDispMode(3);
         }
 
@@ -286,6 +285,8 @@ namespace waifuinwindow {
             if (MainIni.UseShortcut) {
                 if (hotKey != null) hotKey.Dispose();
                 SetHotkey();
+            } else if (hotKey != null) {
+                hotKey.Dispose();
             }
         }
 
@@ -309,11 +310,12 @@ namespace waifuinwindow {
         }
 
         private void SetHotkey() {
+            KeysConverter convert = new KeysConverter();
             MOD_KEY modKeys = 0;
             if (MainIni.UseAlt) modKeys |= MOD_KEY.ALT;
             if (MainIni.UseCtrl) modKeys |= MOD_KEY.CONTROL;
             if (MainIni.UseShift) modKeys |= MOD_KEY.SHIFT;
-            hotKey = new HotKey(modKeys, Keys.F);
+            hotKey = new HotKey(modKeys, (Keys)convert.ConvertFromString(MainIni.ShortcutKey));
             hotKey.HotKeyPush += new EventHandler(ImageCapButton_Click);
         }
     }

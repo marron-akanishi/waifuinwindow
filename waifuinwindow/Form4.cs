@@ -1,15 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace waifuinwindow {
     public partial class Form4 : Form {
+        bool KeySetMode = false;
+
         public Form4() {
             InitializeComponent();
         }
@@ -42,6 +37,23 @@ namespace waifuinwindow {
             ((Form1)this.Owner).MainIni.UseShift = this.UseShift.Checked;
             ((Form1)this.Owner).MainIni.ShortcutKey = this.Shortcut.Text;
             this.Close();
+        }
+
+        private void GetKeyButton_Click(object sender, EventArgs e) {
+            KeyLabel.Visible = true;
+            KeySetMode = true;
+        }
+
+        private void GetKeyButton_KeyUp(object sender, KeyEventArgs e) {
+            if (KeySetMode) {
+                if (e.KeyCode != Keys.Escape) Shortcut.Text = e.KeyCode.ToString();
+                KeySetMode = false;
+                KeyLabel.Visible = false;
+            }
+        }
+
+        private void KeyResetButton_Click(object sender, EventArgs e) {
+            Shortcut.Text = "S";
         }
     }
 }
