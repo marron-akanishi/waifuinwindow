@@ -57,7 +57,7 @@ namespace WindowController
             // （ウィンドウが最小化されていると座標を取得できないから）
             this.Restore();
             // ウィンドウを最前面に表示する（アクティブにはしない）
-            this.SetWindowDispMode(1);
+            this.SetWindowDispMode("TOP");
 
             // クライアント領域の左上のスクリーン座標を取得
             NativeCall.POINT screenPoint = new NativeCall.POINT(0, 0);
@@ -135,16 +135,16 @@ namespace WindowController
         /// 指定したウィンドウのモードを設定する
         /// </summary>
         /// <param name="Mode">最前面設定</param>
-        public void SetWindowDispMode(int Mode)
+        public void SetWindowDispMode(string Mode)
         {
             switch (Mode) {
-                case 1:
+                case "TOP":
                     SetWindowMode((IntPtr)NativeCall.SpecialWindowHandles.HWND_TOP);
                     break;
-                case 2:
+                case "TOPMOST":
                     SetWindowMode((IntPtr)NativeCall.SpecialWindowHandles.HWND_TOPMOST);
                     break;
-                case 3:
+                case "NOTOPMOST":
                     SetWindowMode((IntPtr)NativeCall.SpecialWindowHandles.HWND_NOTOPMOST);
                     break;
             }

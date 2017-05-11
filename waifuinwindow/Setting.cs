@@ -4,24 +4,9 @@ using System.Text;
 
 namespace waifuinwindow {
     public class Setting {
-        [DllImport("kernel32.dll")]
-        private static extern int GetPrivateProfileString(
-                string lpApplicationName,
-                string lpKeyName,
-                string lpDefault,
-                StringBuilder lpReturnedstring,
-                int nSize,
-                string lpFileName);
-
-        [DllImport("kernel32.dll")]
-        private static extern int WritePrivateProfileString(
-            string lpApplicationName,
-            string lpKeyName,
-            string lpstring,
-            string lpFileName);
-
         string filePath = "./setting.ini";
 
+        //Ini
         #region General
         public int PosX {
             get { return Convert.ToInt32(GetValue("General", "PosX", "300")); }
@@ -46,6 +31,11 @@ namespace waifuinwindow {
         public bool UseSound {
             get { return Convert.ToBoolean(GetValue("General", "UseSound", "False")); }
             set { SetValue("General", "UseSound", value.ToString()); }
+        }
+
+        public int Resize {
+            get { return Convert.ToInt32(GetValue("General", "Resize", "50")); }
+            set { SetValue("General", "Resize", value.ToString()); }
         }
         #endregion
 
@@ -90,6 +80,21 @@ namespace waifuinwindow {
         #endregion
 
         #region IniMethods
+        [DllImport("kernel32.dll")]
+        private static extern int GetPrivateProfileString(
+                string lpApplicationName,
+                string lpKeyName,
+                string lpDefault,
+                StringBuilder lpReturnedstring,
+                int nSize,
+                string lpFileName);
+
+        [DllImport("kernel32.dll")]
+        private static extern int WritePrivateProfileString(
+            string lpApplicationName,
+            string lpKeyName,
+            string lpstring,
+            string lpFileName);
         /// <summary>
         /// sectionとkeyからiniファイルの設定値を取得します。
         /// 指定したsectionとkeyの組合せが無い場合はdefaultvalueで指定した値が返ります。

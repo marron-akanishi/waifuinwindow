@@ -27,6 +27,7 @@ namespace waifuinwindow {
             this.UseCtrl.Checked = ((Form1)this.Owner).MainIni.UseCtrl;
             this.UseShift.Checked = ((Form1)this.Owner).MainIni.UseShift;
             this.Shortcut.Text = ((Form1)this.Owner).MainIni.ShortcutKey;
+            this.ResizePer.Value = ((Form1)this.Owner).MainIni.Resize;
         }
 
         private void OkButton_Click(object sender, EventArgs e) {
@@ -36,6 +37,7 @@ namespace waifuinwindow {
             ((Form1)this.Owner).MainIni.UseCtrl = this.UseCtrl.Checked;
             ((Form1)this.Owner).MainIni.UseShift = this.UseShift.Checked;
             ((Form1)this.Owner).MainIni.ShortcutKey = this.Shortcut.Text;
+            ((Form1)this.Owner).MainIni.Resize = (int)this.ResizePer.Value;
             this.Close();
         }
 

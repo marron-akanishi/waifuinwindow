@@ -122,9 +122,10 @@ namespace waifuinwindow {
             // 入力引数の異常時のエラー処理
             if (img == null) return null;
             byte[] ImageBytes;
+            int Percent = MainIni.Resize;
             // リサイズ処理
-            if (Resize50.Checked) {
-                Bitmap canvas = new Bitmap(img.Width/2, img.Height/2);
+            if (ResizeMode.Checked) {
+                Bitmap canvas = new Bitmap(img.Width * Percent / 100, img.Height * Percent / 100);
                 //ImageオブジェクトのGraphicsオブジェクトを作成する
                 Graphics g = Graphics.FromImage(canvas);
                 //Bitmapオブジェクトの作成
@@ -132,7 +133,7 @@ namespace waifuinwindow {
                 //補間方法として双三次補間を指定する
                 g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
                 //画像を縮小して描画する
-                g.DrawImage(image, 0, 0, img.Width/2, img.Height/2);
+                g.DrawImage(image, 0, 0, img.Width * Percent / 100, img.Height * Percent / 100);
                 //BitmapとGraphicsオブジェクトを破棄
                 image.Dispose();
                 g.Dispose();
@@ -244,7 +245,7 @@ namespace waifuinwindow {
                 hotKey.Dispose();
             }
             catch { }
-            if (TopMost_Target.Checked) Target.SetWindowDispMode(3);
+            if (TopMost_Target.Checked) Target.SetWindowDispMode("NOTOPMOST");
         }
 
         private void TweetText_KeyDown(object sender, KeyEventArgs e) {
@@ -260,8 +261,8 @@ namespace waifuinwindow {
         }
 
         private void TopMost_Target_CheckedChanged(object sender, EventArgs e) {
-            if (TopMost_Target.Checked) Target.SetWindowDispMode(2);
-            else Target.SetWindowDispMode(3);
+            if (TopMost_Target.Checked) Target.SetWindowDispMode("TOPMOST");
+            else Target.SetWindowDispMode("NOTOPMOST");
         }
 
         private void UpdateButton_Click(object sender, EventArgs e) {

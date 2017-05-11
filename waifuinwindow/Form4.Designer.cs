@@ -38,6 +38,10 @@
             this.GetKeyButton = new System.Windows.Forms.Button();
             this.KeyResetButton = new System.Windows.Forms.Button();
             this.KeyLabel = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.ResizePer = new System.Windows.Forms.NumericUpDown();
+            this.label6 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.ResizePer)).BeginInit();
             this.SuspendLayout();
             // 
             // CancelButton
@@ -167,6 +171,7 @@
             this.Shortcut.Location = new System.Drawing.Point(201, 45);
             this.Shortcut.Margin = new System.Windows.Forms.Padding(2);
             this.Shortcut.Name = "Shortcut";
+            this.Shortcut.ReadOnly = true;
             this.Shortcut.Size = new System.Drawing.Size(68, 19);
             this.Shortcut.TabIndex = 11;
             // 
@@ -201,11 +206,54 @@
             this.KeyLabel.Text = "キー認識中(Escでキャンセル)";
             this.KeyLabel.Visible = false;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 74);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(95, 12);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "リサイズ% (25～75)";
+            // 
+            // ResizePer
+            // 
+            this.ResizePer.Location = new System.Drawing.Point(8, 89);
+            this.ResizePer.Maximum = new decimal(new int[] {
+            75,
+            0,
+            0,
+            0});
+            this.ResizePer.Minimum = new decimal(new int[] {
+            25,
+            0,
+            0,
+            0});
+            this.ResizePer.Name = "ResizePer";
+            this.ResizePer.Size = new System.Drawing.Size(44, 19);
+            this.ResizePer.TabIndex = 16;
+            this.ResizePer.Value = new decimal(new int[] {
+            25,
+            0,
+            0,
+            0});
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(58, 91);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(11, 12);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "%";
+            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(317, 157);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.ResizePer);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.KeyLabel);
             this.Controls.Add(this.KeyResetButton);
             this.Controls.Add(this.GetKeyButton);
@@ -226,6 +274,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "設定";
             this.Load += new System.EventHandler(this.Form4_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.ResizePer)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -248,5 +297,8 @@
         private System.Windows.Forms.Button GetKeyButton;
         private System.Windows.Forms.Button KeyResetButton;
         private System.Windows.Forms.Label KeyLabel;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.NumericUpDown ResizePer;
+        private System.Windows.Forms.Label label6;
     }
 }
