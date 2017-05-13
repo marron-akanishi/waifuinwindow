@@ -12,7 +12,7 @@ namespace WindowController
 		/// <summary>
 		/// 対象のウィンドウのハンドル
 		/// </summary>
-		protected IntPtr handle;
+		public IntPtr handle;
 
         private const int SRCCOPY = 13369376;
         private const int CAPTUREBLT = 1073741824;
@@ -26,8 +26,7 @@ namespace WindowController
 			foreach (Process process in Process.GetProcessesByName(processName))
 			{
 				IntPtr handle = process.MainWindowHandle;
-				if (handle == IntPtr.Zero)
-					continue;
+				if (handle == IntPtr.Zero) continue;
 				this.handle = handle;
 			}
 			if (this.handle == IntPtr.Zero)

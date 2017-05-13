@@ -84,9 +84,9 @@
             this.UseShortcut.Location = new System.Drawing.Point(8, 28);
             this.UseShortcut.Margin = new System.Windows.Forms.Padding(2);
             this.UseShortcut.Name = "UseShortcut";
-            this.UseShortcut.Size = new System.Drawing.Size(203, 16);
+            this.UseShortcut.Size = new System.Drawing.Size(237, 16);
             this.UseShortcut.TabIndex = 3;
-            this.UseShortcut.Text = "Capボタンのショートカットを有効化する";
+            this.UseShortcut.Text = "キャプチャーボタンのショートカットを有効化する";
             this.UseShortcut.UseVisualStyleBackColor = true;
             this.UseShortcut.CheckedChanged += new System.EventHandler(this.UseShortcut_CheckedChanged);
             // 
@@ -182,7 +182,7 @@
             this.GetKeyButton.Name = "GetKeyButton";
             this.GetKeyButton.Size = new System.Drawing.Size(47, 23);
             this.GetKeyButton.TabIndex = 12;
-            this.GetKeyButton.Text = "Set";
+            this.GetKeyButton.Text = "設定";
             this.GetKeyButton.UseVisualStyleBackColor = true;
             this.GetKeyButton.Click += new System.EventHandler(this.GetKeyButton_Click);
             this.GetKeyButton.KeyUp += new System.Windows.Forms.KeyEventHandler(this.GetKeyButton_KeyUp);
@@ -193,7 +193,7 @@
             this.KeyResetButton.Name = "KeyResetButton";
             this.KeyResetButton.Size = new System.Drawing.Size(47, 23);
             this.KeyResetButton.TabIndex = 13;
-            this.KeyResetButton.Text = "Reset";
+            this.KeyResetButton.Text = "リセット";
             this.KeyResetButton.UseVisualStyleBackColor = true;
             this.KeyResetButton.Click += new System.EventHandler(this.KeyResetButton_Click);
             // 

@@ -23,7 +23,6 @@
         /// コード エディターで変更しないでください。
         /// </summary>
         private void InitializeComponent() {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.capturedImage = new System.Windows.Forms.PictureBox();
             this.ImageCapButton = new System.Windows.Forms.Button();
@@ -34,7 +33,6 @@
             this.ModeSelect = new System.Windows.Forms.ComboBox();
             this.AreaLabel = new System.Windows.Forms.Label();
             this.AreaSelButton = new System.Windows.Forms.Button();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.Image1 = new System.Windows.Forms.CheckBox();
             this.Image2 = new System.Windows.Forms.CheckBox();
             this.Image3 = new System.Windows.Forms.CheckBox();
@@ -48,7 +46,7 @@
             this.FooterText = new System.Windows.Forms.TextBox();
             this.TopMost_Target = new System.Windows.Forms.CheckBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.StatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.StatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.TweetStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.ResizeMode = new System.Windows.Forms.CheckBox();
             this.exeSetButton = new System.Windows.Forms.Button();
@@ -75,7 +73,7 @@
             this.ImageCapButton.Name = "ImageCapButton";
             this.ImageCapButton.Size = new System.Drawing.Size(106, 58);
             this.ImageCapButton.TabIndex = 3;
-            this.ImageCapButton.Text = "Cap";
+            this.ImageCapButton.Text = "キャプチャー";
             this.ImageCapButton.UseVisualStyleBackColor = true;
             this.ImageCapButton.Click += new System.EventHandler(this.ImageCapButton_Click);
             // 
@@ -107,9 +105,9 @@
             this.TopMost_Me.AutoSize = true;
             this.TopMost_Me.Location = new System.Drawing.Point(13, 454);
             this.TopMost_Me.Name = "TopMost_Me";
-            this.TopMost_Me.Size = new System.Drawing.Size(91, 16);
+            this.TopMost_Me.Size = new System.Drawing.Size(92, 16);
             this.TopMost_Me.TabIndex = 6;
-            this.TopMost_Me.Text = "TopMost(Me)";
+            this.TopMost_Me.Text = "最前面(自分)";
             this.TopMost_Me.UseVisualStyleBackColor = true;
             this.TopMost_Me.CheckedChanged += new System.EventHandler(this.TopMost_Me_CheckedChanged);
             // 
@@ -119,7 +117,7 @@
             this.ImageSaveButton.Name = "ImageSaveButton";
             this.ImageSaveButton.Size = new System.Drawing.Size(95, 58);
             this.ImageSaveButton.TabIndex = 8;
-            this.ImageSaveButton.Text = "Save";
+            this.ImageSaveButton.Text = "保存";
             this.ImageSaveButton.UseVisualStyleBackColor = true;
             this.ImageSaveButton.Click += new System.EventHandler(this.ImageSaveButton_Click);
             // 
@@ -128,9 +126,9 @@
             this.ModeSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ModeSelect.FormattingEnabled = true;
             this.ModeSelect.Items.AddRange(new object[] {
-            "DeviceContext",
-            "WindowArea",
-            "SelectArea"});
+            "デバイスコンテキスト",
+            "ウィンドウ領域",
+            "選択領域"});
             this.ModeSelect.Location = new System.Drawing.Point(13, 360);
             this.ModeSelect.Name = "ModeSelect";
             this.ModeSelect.Size = new System.Drawing.Size(207, 20);
@@ -152,7 +150,7 @@
             this.AreaSelButton.Name = "AreaSelButton";
             this.AreaSelButton.Size = new System.Drawing.Size(55, 23);
             this.AreaSelButton.TabIndex = 11;
-            this.AreaSelButton.Text = "Sel";
+            this.AreaSelButton.Text = "選択";
             this.AreaSelButton.UseVisualStyleBackColor = true;
             this.AreaSelButton.Click += new System.EventHandler(this.AreaSelButton_Click);
             // 
@@ -247,37 +245,37 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(225, 280);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 12);
+            this.label2.Size = new System.Drawing.Size(71, 12);
             this.label2.TabIndex = 24;
-            this.label2.Text = "CapturedScreen";
+            this.label2.Text = "キャプチャー先";
             // 
             // FooterMode
             // 
             this.FooterMode.AutoSize = true;
             this.FooterMode.Location = new System.Drawing.Point(225, 408);
             this.FooterMode.Name = "FooterMode";
-            this.FooterMode.Size = new System.Drawing.Size(60, 16);
+            this.FooterMode.Size = new System.Drawing.Size(54, 16);
             this.FooterMode.TabIndex = 25;
-            this.FooterMode.Text = "footer：";
+            this.FooterMode.Text = "固定：";
             this.FooterMode.UseVisualStyleBackColor = true;
             this.FooterMode.CheckedChanged += new System.EventHandler(this.TweetText_TextChanged);
             // 
             // FooterText
             // 
-            this.FooterText.Location = new System.Drawing.Point(282, 406);
+            this.FooterText.Location = new System.Drawing.Point(274, 406);
             this.FooterText.Name = "FooterText";
-            this.FooterText.Size = new System.Drawing.Size(172, 19);
+            this.FooterText.Size = new System.Drawing.Size(180, 19);
             this.FooterText.TabIndex = 26;
             this.FooterText.TextChanged += new System.EventHandler(this.TweetText_TextChanged);
             // 
             // TopMost_Target
             // 
             this.TopMost_Target.AutoSize = true;
-            this.TopMost_Target.Location = new System.Drawing.Point(110, 454);
+            this.TopMost_Target.Location = new System.Drawing.Point(125, 454);
             this.TopMost_Target.Name = "TopMost_Target";
-            this.TopMost_Target.Size = new System.Drawing.Size(109, 16);
+            this.TopMost_Target.Size = new System.Drawing.Size(92, 16);
             this.TopMost_Target.TabIndex = 27;
-            this.TopMost_Target.Text = "TopMost(Target)";
+            this.TopMost_Target.Text = "最前面(相手)";
             this.TopMost_Target.UseVisualStyleBackColor = true;
             this.TopMost_Target.CheckedChanged += new System.EventHandler(this.TopMost_Target_CheckedChanged);
             // 
@@ -285,7 +283,7 @@
             // 
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(22, 22);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.StatusLabel1,
+            this.StatusLabel,
             this.TweetStatus});
             this.statusStrip1.Location = new System.Drawing.Point(0, 477);
             this.statusStrip1.Name = "statusStrip1";
@@ -294,16 +292,16 @@
             this.statusStrip1.TabIndex = 28;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // StatusLabel1
+            // StatusLabel
             // 
-            this.StatusLabel1.Name = "StatusLabel1";
-            this.StatusLabel1.Size = new System.Drawing.Size(55, 17);
-            this.StatusLabel1.Text = "準備完了";
+            this.StatusLabel.Name = "StatusLabel";
+            this.StatusLabel.Size = new System.Drawing.Size(55, 17);
+            this.StatusLabel.Text = "準備完了";
             // 
             // TweetStatus
             // 
             this.TweetStatus.Name = "TweetStatus";
-            this.TweetStatus.Size = new System.Drawing.Size(397, 17);
+            this.TweetStatus.Size = new System.Drawing.Size(366, 17);
             this.TweetStatus.Spring = true;
             this.TweetStatus.Text = "認証済み";
             this.TweetStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -314,9 +312,9 @@
             this.ResizeMode.BackColor = System.Drawing.SystemColors.Control;
             this.ResizeMode.Location = new System.Drawing.Point(225, 454);
             this.ResizeMode.Name = "ResizeMode";
-            this.ResizeMode.Size = new System.Drawing.Size(92, 16);
+            this.ResizeMode.Size = new System.Drawing.Size(101, 16);
             this.ResizeMode.TabIndex = 29;
-            this.ResizeMode.Text = "Resize Image";
+            this.ResizeMode.Text = "画像縮小(全て)";
             this.ResizeMode.UseVisualStyleBackColor = false;
             // 
             // exeSetButton
@@ -325,7 +323,7 @@
             this.exeSetButton.Name = "exeSetButton";
             this.exeSetButton.Size = new System.Drawing.Size(94, 23);
             this.exeSetButton.TabIndex = 1;
-            this.exeSetButton.Text = "Set";
+            this.exeSetButton.Text = "決定";
             this.exeSetButton.UseVisualStyleBackColor = true;
             this.exeSetButton.Click += new System.EventHandler(this.exeSetButton_Click);
             // 
@@ -343,7 +341,7 @@
             this.UpdateButton.Name = "UpdateButton";
             this.UpdateButton.Size = new System.Drawing.Size(106, 23);
             this.UpdateButton.TabIndex = 31;
-            this.UpdateButton.Text = "Update";
+            this.UpdateButton.Text = "リスト更新";
             this.UpdateButton.UseVisualStyleBackColor = true;
             this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
             // 
@@ -354,7 +352,7 @@
             this.SettingButton.Name = "SettingButton";
             this.SettingButton.Size = new System.Drawing.Size(86, 32);
             this.SettingButton.TabIndex = 32;
-            this.SettingButton.Text = "Setting";
+            this.SettingButton.Text = "設定";
             this.SettingButton.UseVisualStyleBackColor = true;
             this.SettingButton.Click += new System.EventHandler(this.SettingButton_Click);
             // 
@@ -419,7 +417,6 @@
         private System.Windows.Forms.ComboBox ModeSelect;
         private System.Windows.Forms.Label AreaLabel;
         private System.Windows.Forms.Button AreaSelButton;
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.CheckBox Image1;
         private System.Windows.Forms.CheckBox Image2;
         private System.Windows.Forms.CheckBox Image3;
@@ -433,7 +430,7 @@
         private System.Windows.Forms.TextBox FooterText;
         private System.Windows.Forms.CheckBox TopMost_Target;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel StatusLabel1;
+        private System.Windows.Forms.ToolStripStatusLabel StatusLabel;
         private System.Windows.Forms.ToolStripStatusLabel TweetStatus;
         private System.Windows.Forms.CheckBox ResizeMode;
         private System.Windows.Forms.Button exeSetButton;

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Windows.Forms;
 using CoreTweet;
 using System.Drawing.Imaging;
+using System.Diagnostics;
 
 namespace waifuinwindow {
     public partial class Form1 : Form {
@@ -14,9 +15,12 @@ namespace waifuinwindow {
         Bitmap[] screen = new Bitmap[4];
         Dictionary<string, string> WindowList = new Dictionary<string, string>();
         HotKey hotKey;
+        Timer checker = new Timer();
 
         public Form1() {
             InitializeComponent();
+            checker.Interval = 5000;
+            checker.Tick += WindowCheck;
         }
 
         private int GetScreenId() {
@@ -33,13 +37,16 @@ namespace waifuinwindow {
             catch { }
             try {
                 Target = new WindowController.Window(exeName.Text);
-                StatusLabel1.Text = exeName.Text;
-                ModeSelect.SelectedIndex = 0;
-                TopMost_Target.Checked = false;
             }
-            catch (System.Exception ex){
-                StatusLabel1.Text = ex.Message;
+            catch (System.Exception ex) {
+                StatusLabel.Text = ex.Message;
+                return;
             }
+            StatusLabel.Text = "ウィンドウを発見しました - " + exeName.Text;
+            ModeSelect.SelectedIndex = 0;
+            TopMost_Target.Checked = false;
+            checker.Enabled = true;
+            checker.Start();
         }
 
         private void ImageCapButton_Click(object sender, EventArgs e) {
@@ -47,9 +54,17 @@ namespace waifuinwindow {
             var player = new System.Media.SoundPlayer("./shutter.wav");
             this.Opacity = 0;
             try {
-                if (ModeSelect.SelectedIndex == 0) capture = Target.CaptureWindowDC();
-                else if (ModeSelect.SelectedIndex == 1) capture = Target.CaptureWindow();
-                else capture = WindowController.Mouse.CaptureScreen(Program.SelArea);
+                switch (ModeSelect.SelectedIndex) {
+                    case 0:
+                        capture = Target.CaptureWindowDC();
+                        break;
+                    case 1:
+                        capture = Target.CaptureWindow();
+                        break;
+                    default:
+                        capture = WindowController.Mouse.CaptureScreen(Program.SelArea);
+                        break;
+                }
             }
             catch {
                 this.Opacity = 1;
@@ -318,6 +333,17 @@ namespace waifuinwindow {
             if (MainIni.UseShift) modKeys |= MOD_KEY.SHIFT;
             hotKey = new HotKey(modKeys, (Keys)convert.ConvertFromString(MainIni.ShortcutKey));
             hotKey.HotKeyPush += new EventHandler(ImageCapButton_Click);
+        }
+
+        private void WindowCheck(object sender, EventArgs e) {
+            foreach(Process check in Process.GetProcessesByName(exeName.Text)) {
+                if (check.MainWindowHandle == Target.handle) return;
+            }
+            StatusLabel.Text = "ウィンドウを見失いました";
+            Target = null;
+            exeName.Text = "";
+            ModeSelect.SelectedIndex = 2;
+            checker.Stop();
         }
     }
 }
