@@ -131,7 +131,7 @@ namespace waifuinwindow {
                 //Bitmapオブジェクトの作成
                 Bitmap image = new Bitmap(img);
                 //補間方法として双三次補間を指定する
-                g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+                g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
                 //画像を縮小して描画する
                 g.DrawImage(image, 0, 0, img.Width * Percent / 100, img.Height * Percent / 100);
                 //BitmapとGraphicsオブジェクトを破棄

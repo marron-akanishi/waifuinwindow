@@ -94,6 +94,7 @@
             this.TweetText.MaxLength = 140;
             this.TweetText.Multiline = true;
             this.TweetText.Name = "TweetText";
+            this.TweetText.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.TweetText.Size = new System.Drawing.Size(230, 81);
             this.TweetText.TabIndex = 5;
             this.TweetText.TextChanged += new System.EventHandler(this.TweetText_TextChanged);
@@ -306,12 +307,12 @@
             this.TweetStatus.Text = "認証済み";
             this.TweetStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // Resize50
+            // ResizeMode
             // 
             this.ResizeMode.AutoSize = true;
             this.ResizeMode.BackColor = System.Drawing.SystemColors.Control;
             this.ResizeMode.Location = new System.Drawing.Point(225, 454);
-            this.ResizeMode.Name = "Resize50";
+            this.ResizeMode.Name = "ResizeMode";
             this.ResizeMode.Size = new System.Drawing.Size(92, 16);
             this.ResizeMode.TabIndex = 29;
             this.ResizeMode.Text = "Resize Image";
@@ -348,7 +349,7 @@
             // SettingButton
             // 
             this.SettingButton.Location = new System.Drawing.Point(367, 280);
-            this.SettingButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SettingButton.Margin = new System.Windows.Forms.Padding(2);
             this.SettingButton.Name = "SettingButton";
             this.SettingButton.Size = new System.Drawing.Size(86, 32);
             this.SettingButton.TabIndex = 32;
