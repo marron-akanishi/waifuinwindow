@@ -23,6 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form4));
             this.CancelButton = new System.Windows.Forms.Button();
             this.OkButton = new System.Windows.Forms.Button();
             this.UseSound = new System.Windows.Forms.CheckBox();
@@ -269,6 +270,7 @@
             this.Controls.Add(this.UseSound);
             this.Controls.Add(this.OkButton);
             this.Controls.Add(this.CancelButton);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form4";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

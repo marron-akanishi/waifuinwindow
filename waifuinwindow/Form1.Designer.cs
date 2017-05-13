@@ -24,6 +24,7 @@
         /// </summary>
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.capturedImage = new System.Windows.Forms.PictureBox();
             this.ImageCapButton = new System.Windows.Forms.Button();
             this.TweetButton = new System.Windows.Forms.Button();
@@ -391,6 +392,7 @@
             this.Controls.Add(this.capturedImage);
             this.Controls.Add(this.exeSetButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
