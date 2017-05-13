@@ -59,309 +59,208 @@
             // 
             // capturedImage
             // 
-            this.capturedImage.Location = new System.Drawing.Point(12, 12);
+            resources.ApplyResources(this.capturedImage, "capturedImage");
             this.capturedImage.Name = "capturedImage";
-            this.capturedImage.Size = new System.Drawing.Size(443, 257);
-            this.capturedImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.capturedImage.TabIndex = 2;
             this.capturedImage.TabStop = false;
             // 
             // ImageCapButton
             // 
-            this.ImageCapButton.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.ImageCapButton.Location = new System.Drawing.Point(13, 388);
+            resources.ApplyResources(this.ImageCapButton, "ImageCapButton");
             this.ImageCapButton.Name = "ImageCapButton";
-            this.ImageCapButton.Size = new System.Drawing.Size(106, 58);
-            this.ImageCapButton.TabIndex = 3;
-            this.ImageCapButton.Text = "キャプチャー";
             this.ImageCapButton.UseVisualStyleBackColor = true;
             this.ImageCapButton.Click += new System.EventHandler(this.ImageCapButton_Click);
             // 
             // TweetButton
             // 
-            this.TweetButton.Location = new System.Drawing.Point(367, 428);
+            resources.ApplyResources(this.TweetButton, "TweetButton");
             this.TweetButton.Name = "TweetButton";
-            this.TweetButton.Size = new System.Drawing.Size(88, 42);
-            this.TweetButton.TabIndex = 4;
-            this.TweetButton.Text = "140";
             this.TweetButton.UseVisualStyleBackColor = true;
             this.TweetButton.Click += new System.EventHandler(this.TweetButton_Click);
             // 
             // TweetText
             // 
-            this.TweetText.Location = new System.Drawing.Point(225, 319);
-            this.TweetText.MaxLength = 140;
-            this.TweetText.Multiline = true;
+            resources.ApplyResources(this.TweetText, "TweetText");
             this.TweetText.Name = "TweetText";
-            this.TweetText.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.TweetText.Size = new System.Drawing.Size(230, 81);
-            this.TweetText.TabIndex = 5;
             this.TweetText.TextChanged += new System.EventHandler(this.TweetText_TextChanged);
             this.TweetText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TweetText_KeyDown);
             this.TweetText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TweetText_KeyPress);
             // 
             // TopMost_Me
             // 
-            this.TopMost_Me.AutoSize = true;
-            this.TopMost_Me.Location = new System.Drawing.Point(13, 454);
+            resources.ApplyResources(this.TopMost_Me, "TopMost_Me");
             this.TopMost_Me.Name = "TopMost_Me";
-            this.TopMost_Me.Size = new System.Drawing.Size(92, 16);
-            this.TopMost_Me.TabIndex = 6;
-            this.TopMost_Me.Text = "最前面(自分)";
             this.TopMost_Me.UseVisualStyleBackColor = true;
             this.TopMost_Me.CheckedChanged += new System.EventHandler(this.TopMost_Me_CheckedChanged);
             // 
             // ImageSaveButton
             // 
-            this.ImageSaveButton.Location = new System.Drawing.Point(125, 388);
+            resources.ApplyResources(this.ImageSaveButton, "ImageSaveButton");
             this.ImageSaveButton.Name = "ImageSaveButton";
-            this.ImageSaveButton.Size = new System.Drawing.Size(95, 58);
-            this.ImageSaveButton.TabIndex = 8;
-            this.ImageSaveButton.Text = "保存";
             this.ImageSaveButton.UseVisualStyleBackColor = true;
             this.ImageSaveButton.Click += new System.EventHandler(this.ImageSaveButton_Click);
             // 
             // ModeSelect
             // 
+            resources.ApplyResources(this.ModeSelect, "ModeSelect");
             this.ModeSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ModeSelect.FormattingEnabled = true;
             this.ModeSelect.Items.AddRange(new object[] {
-            "デバイスコンテキスト",
-            "ウィンドウ領域",
-            "選択領域"});
-            this.ModeSelect.Location = new System.Drawing.Point(13, 360);
+            resources.GetString("ModeSelect.Items"),
+            resources.GetString("ModeSelect.Items1"),
+            resources.GetString("ModeSelect.Items2")});
             this.ModeSelect.Name = "ModeSelect";
-            this.ModeSelect.Size = new System.Drawing.Size(207, 20);
-            this.ModeSelect.TabIndex = 9;
             // 
             // AreaLabel
             // 
-            this.AreaLabel.AutoSize = true;
-            this.AreaLabel.Location = new System.Drawing.Point(11, 336);
+            resources.ApplyResources(this.AreaLabel, "AreaLabel");
             this.AreaLabel.Name = "AreaLabel";
-            this.AreaLabel.Size = new System.Drawing.Size(152, 12);
-            this.AreaLabel.TabIndex = 10;
-            this.AreaLabel.Text = "X:9999 Y:9999 W:9999 H:9999";
-            this.AreaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // AreaSelButton
             // 
-            this.AreaSelButton.Location = new System.Drawing.Point(165, 331);
+            resources.ApplyResources(this.AreaSelButton, "AreaSelButton");
             this.AreaSelButton.Name = "AreaSelButton";
-            this.AreaSelButton.Size = new System.Drawing.Size(55, 23);
-            this.AreaSelButton.TabIndex = 11;
-            this.AreaSelButton.Text = "選択";
             this.AreaSelButton.UseVisualStyleBackColor = true;
             this.AreaSelButton.Click += new System.EventHandler(this.AreaSelButton_Click);
             // 
             // Image1
             // 
-            this.Image1.AutoSize = true;
-            this.Image1.Location = new System.Drawing.Point(225, 432);
+            resources.ApplyResources(this.Image1, "Image1");
             this.Image1.Name = "Image1";
-            this.Image1.Size = new System.Drawing.Size(30, 16);
-            this.Image1.TabIndex = 15;
-            this.Image1.Text = "1";
             this.Image1.UseVisualStyleBackColor = true;
             // 
             // Image2
             // 
-            this.Image2.AutoSize = true;
-            this.Image2.Location = new System.Drawing.Point(261, 432);
+            resources.ApplyResources(this.Image2, "Image2");
             this.Image2.Name = "Image2";
-            this.Image2.Size = new System.Drawing.Size(30, 16);
-            this.Image2.TabIndex = 16;
-            this.Image2.Text = "2";
             this.Image2.UseVisualStyleBackColor = true;
             // 
             // Image3
             // 
-            this.Image3.AutoSize = true;
-            this.Image3.Location = new System.Drawing.Point(297, 432);
+            resources.ApplyResources(this.Image3, "Image3");
             this.Image3.Name = "Image3";
-            this.Image3.Size = new System.Drawing.Size(30, 16);
-            this.Image3.TabIndex = 17;
-            this.Image3.Text = "3";
             this.Image3.UseVisualStyleBackColor = true;
             // 
             // Image4
             // 
-            this.Image4.AutoSize = true;
-            this.Image4.Location = new System.Drawing.Point(331, 432);
+            resources.ApplyResources(this.Image4, "Image4");
             this.Image4.Name = "Image4";
-            this.Image4.Size = new System.Drawing.Size(30, 16);
-            this.Image4.TabIndex = 18;
-            this.Image4.Text = "4";
             this.Image4.UseVisualStyleBackColor = true;
             // 
             // Screen1
             // 
-            this.Screen1.AutoSize = true;
+            resources.ApplyResources(this.Screen1, "Screen1");
             this.Screen1.Checked = true;
-            this.Screen1.Location = new System.Drawing.Point(227, 297);
             this.Screen1.Name = "Screen1";
-            this.Screen1.Size = new System.Drawing.Size(29, 16);
-            this.Screen1.TabIndex = 19;
             this.Screen1.TabStop = true;
-            this.Screen1.Text = "1";
             this.Screen1.UseVisualStyleBackColor = true;
             this.Screen1.CheckedChanged += new System.EventHandler(this.Screen_CheckedChanged);
             // 
             // Screen2
             // 
-            this.Screen2.AutoSize = true;
-            this.Screen2.Location = new System.Drawing.Point(262, 297);
+            resources.ApplyResources(this.Screen2, "Screen2");
             this.Screen2.Name = "Screen2";
-            this.Screen2.Size = new System.Drawing.Size(29, 16);
-            this.Screen2.TabIndex = 20;
-            this.Screen2.Text = "2";
             this.Screen2.UseVisualStyleBackColor = true;
             this.Screen2.CheckedChanged += new System.EventHandler(this.Screen_CheckedChanged);
             // 
             // Screen3
             // 
-            this.Screen3.AutoSize = true;
-            this.Screen3.Location = new System.Drawing.Point(298, 297);
+            resources.ApplyResources(this.Screen3, "Screen3");
             this.Screen3.Name = "Screen3";
-            this.Screen3.Size = new System.Drawing.Size(29, 16);
-            this.Screen3.TabIndex = 21;
-            this.Screen3.Text = "3";
             this.Screen3.UseVisualStyleBackColor = true;
             this.Screen3.CheckedChanged += new System.EventHandler(this.Screen_CheckedChanged);
             // 
             // Screen4
             // 
-            this.Screen4.AutoSize = true;
-            this.Screen4.Location = new System.Drawing.Point(332, 297);
+            resources.ApplyResources(this.Screen4, "Screen4");
             this.Screen4.Name = "Screen4";
-            this.Screen4.Size = new System.Drawing.Size(29, 16);
-            this.Screen4.TabIndex = 22;
-            this.Screen4.Text = "4";
             this.Screen4.UseVisualStyleBackColor = true;
             this.Screen4.CheckedChanged += new System.EventHandler(this.Screen_CheckedChanged);
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(225, 280);
+            resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 12);
-            this.label2.TabIndex = 24;
-            this.label2.Text = "キャプチャー先";
             // 
             // FooterMode
             // 
-            this.FooterMode.AutoSize = true;
-            this.FooterMode.Location = new System.Drawing.Point(225, 408);
+            resources.ApplyResources(this.FooterMode, "FooterMode");
             this.FooterMode.Name = "FooterMode";
-            this.FooterMode.Size = new System.Drawing.Size(54, 16);
-            this.FooterMode.TabIndex = 25;
-            this.FooterMode.Text = "固定：";
             this.FooterMode.UseVisualStyleBackColor = true;
             this.FooterMode.CheckedChanged += new System.EventHandler(this.TweetText_TextChanged);
             // 
             // FooterText
             // 
-            this.FooterText.Location = new System.Drawing.Point(274, 406);
+            resources.ApplyResources(this.FooterText, "FooterText");
             this.FooterText.Name = "FooterText";
-            this.FooterText.Size = new System.Drawing.Size(180, 19);
-            this.FooterText.TabIndex = 26;
             this.FooterText.TextChanged += new System.EventHandler(this.TweetText_TextChanged);
             // 
             // TopMost_Target
             // 
-            this.TopMost_Target.AutoSize = true;
-            this.TopMost_Target.Location = new System.Drawing.Point(125, 454);
+            resources.ApplyResources(this.TopMost_Target, "TopMost_Target");
             this.TopMost_Target.Name = "TopMost_Target";
-            this.TopMost_Target.Size = new System.Drawing.Size(92, 16);
-            this.TopMost_Target.TabIndex = 27;
-            this.TopMost_Target.Text = "最前面(相手)";
             this.TopMost_Target.UseVisualStyleBackColor = true;
             this.TopMost_Target.CheckedChanged += new System.EventHandler(this.TopMost_Target_CheckedChanged);
             // 
             // statusStrip1
             // 
+            resources.ApplyResources(this.statusStrip1, "statusStrip1");
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(22, 22);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.StatusLabel,
             this.TweetStatus});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 477);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(467, 22);
             this.statusStrip1.SizingGrip = false;
-            this.statusStrip1.TabIndex = 28;
-            this.statusStrip1.Text = "statusStrip1";
             // 
             // StatusLabel
             // 
+            resources.ApplyResources(this.StatusLabel, "StatusLabel");
             this.StatusLabel.Name = "StatusLabel";
-            this.StatusLabel.Size = new System.Drawing.Size(55, 17);
-            this.StatusLabel.Text = "準備完了";
             // 
             // TweetStatus
             // 
+            resources.ApplyResources(this.TweetStatus, "TweetStatus");
             this.TweetStatus.Name = "TweetStatus";
-            this.TweetStatus.Size = new System.Drawing.Size(366, 17);
             this.TweetStatus.Spring = true;
-            this.TweetStatus.Text = "認証済み";
-            this.TweetStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // ResizeMode
             // 
-            this.ResizeMode.AutoSize = true;
+            resources.ApplyResources(this.ResizeMode, "ResizeMode");
             this.ResizeMode.BackColor = System.Drawing.SystemColors.Control;
-            this.ResizeMode.Location = new System.Drawing.Point(225, 454);
             this.ResizeMode.Name = "ResizeMode";
-            this.ResizeMode.Size = new System.Drawing.Size(101, 16);
-            this.ResizeMode.TabIndex = 29;
-            this.ResizeMode.Text = "画像縮小(全て)";
             this.ResizeMode.UseVisualStyleBackColor = false;
             // 
             // exeSetButton
             // 
-            this.exeSetButton.Location = new System.Drawing.Point(125, 303);
+            resources.ApplyResources(this.exeSetButton, "exeSetButton");
             this.exeSetButton.Name = "exeSetButton";
-            this.exeSetButton.Size = new System.Drawing.Size(94, 23);
-            this.exeSetButton.TabIndex = 1;
-            this.exeSetButton.Text = "決定";
             this.exeSetButton.UseVisualStyleBackColor = true;
             this.exeSetButton.Click += new System.EventHandler(this.exeSetButton_Click);
             // 
             // exeName
             // 
+            resources.ApplyResources(this.exeName, "exeName");
             this.exeName.FormattingEnabled = true;
-            this.exeName.Location = new System.Drawing.Point(13, 277);
             this.exeName.Name = "exeName";
-            this.exeName.Size = new System.Drawing.Size(206, 20);
-            this.exeName.TabIndex = 30;
             // 
             // UpdateButton
             // 
-            this.UpdateButton.Location = new System.Drawing.Point(13, 303);
+            resources.ApplyResources(this.UpdateButton, "UpdateButton");
             this.UpdateButton.Name = "UpdateButton";
-            this.UpdateButton.Size = new System.Drawing.Size(106, 23);
-            this.UpdateButton.TabIndex = 31;
-            this.UpdateButton.Text = "リスト更新";
             this.UpdateButton.UseVisualStyleBackColor = true;
             this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
             // 
             // SettingButton
             // 
-            this.SettingButton.Location = new System.Drawing.Point(367, 280);
-            this.SettingButton.Margin = new System.Windows.Forms.Padding(2);
+            resources.ApplyResources(this.SettingButton, "SettingButton");
             this.SettingButton.Name = "SettingButton";
-            this.SettingButton.Size = new System.Drawing.Size(86, 32);
-            this.SettingButton.TabIndex = 32;
-            this.SettingButton.Text = "設定";
             this.SettingButton.UseVisualStyleBackColor = true;
             this.SettingButton.Click += new System.EventHandler(this.SettingButton_Click);
             // 
             // Form1
             // 
+            resources.ApplyResources(this, "$this");
             this.AllowDrop = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(467, 499);
             this.Controls.Add(this.SettingButton);
             this.Controls.Add(this.UpdateButton);
             this.Controls.Add(this.exeName);
@@ -390,11 +289,8 @@
             this.Controls.Add(this.capturedImage);
             this.Controls.Add(this.exeSetButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Form1";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "WaifuInWindow";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.DragDrop += new System.Windows.Forms.DragEventHandler(this.Form1_DragDrop);

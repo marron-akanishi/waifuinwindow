@@ -117,72 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Authed" xml:space="preserve">
-    <value>Authenticated</value>
-    <comment>認証済み</comment>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>262, 26</value>
   </data>
-  <data name="Discover" xml:space="preserve">
-    <value>Discover the window -</value>
-    <comment>ウィンドウ発見時</comment>
+  <data name="label1.Text" xml:space="preserve">
+    <value>表示されたページで認証を行い、
+認証後に表示されるPINコードを入力してください。</value>
   </data>
-  <data name="Error_MBtitle" xml:space="preserve">
-    <value>Error</value>
-    <comment>エラータイトル</comment>
+  <data name="button1.Text" xml:space="preserve">
+    <value>認証</value>
   </data>
-  <data name="Lost" xml:space="preserve">
-    <value>Lost the window</value>
-    <comment>ウィンドウ消失時</comment>
-  </data>
-  <data name="Noauth_button" xml:space="preserve">
-    <value>Auth</value>
-    <comment>認証ボタン</comment>
-  </data>
-  <data name="Noauth_MBtext" xml:space="preserve">
-    <value>Twitter authentication is not done. \nDo you do authentication?</value>
-    <comment>認証メッセージ</comment>
-  </data>
-  <data name="Noauth_MBtitle" xml:space="preserve">
-    <value>Confirm</value>
-    <comment>認証タイトル</comment>
-  </data>
-  <data name="Noauth_status" xml:space="preserve">
-    <value>Please authenticate</value>
-    <comment>認証ステータス</comment>
-  </data>
-  <data name="NoData" xml:space="preserve">
-    <value>There are no contents</value>
-    <comment>内容なし</comment>
-  </data>
-  <data name="Save_title" xml:space="preserve">
-    <value>Save screenshot</value>
-    <comment>保存画面タイトル</comment>
-  </data>
-  <data name="SendError_MBtext" xml:space="preserve">
-    <value>Failed to send Tweet.\nThe image size may be too large.\n</value>
-    <comment>送信エラーメッセージ</comment>
-  </data>
-  <data name="SendError_status" xml:space="preserve">
-    <value>Sending error</value>
-    <comment>送信エラーステータス</comment>
-  </data>
-  <data name="TextOver" xml:space="preserve">
-    <value>The tweet is over 140 characters</value>
-    <comment>140文字超え</comment>
-  </data>
-  <data name="TokenError_MBtext" xml:space="preserve">
-    <value>Failed to generate token. \nIf this error occurs more than once please delete setting.ini.\n</value>
-    <comment>トークンエラーメッセージ</comment>
-  </data>
-  <data name="TokenError_status" xml:space="preserve">
-    <value>Token error</value>
-    <comment>トークンエラーステータス</comment>
-  </data>
-  <data name="Tweet_Sending" xml:space="preserve">
-    <value>Sending</value>
-    <comment>送信中</comment>
-  </data>
-  <data name="Tweet_Sent" xml:space="preserve">
-    <value>Sent - </value>
-    <comment>送信済み</comment>
+  <data name="$this.Text" xml:space="preserve">
+    <value>TwitterAPI認証</value>
   </data>
 </root>

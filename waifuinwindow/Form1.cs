@@ -19,8 +19,6 @@ namespace waifuinwindow {
 
         public Form1() {
             InitializeComponent();
-            checker.Interval = 5000;
-            checker.Tick += WindowCheck;
         }
 
         private int GetScreenId() {
@@ -42,7 +40,7 @@ namespace waifuinwindow {
                 StatusLabel.Text = ex.Message;
                 return;
             }
-            StatusLabel.Text = "ウィンドウを発見しました - " + exeName.Text;
+            StatusLabel.Text = Properties.Resources.Discover + exeName.Text;
             ModeSelect.SelectedIndex = 0;
             TopMost_Target.Checked = false;
             checker.Enabled = true;
@@ -81,18 +79,18 @@ namespace waifuinwindow {
         private void TweetButton_Click(object sender, EventArgs e) {
             // 認証
             if(!MainIni.Auth) {
-                if (MessageBox.Show("Twitter認証がされていません。\n認証を行いますか？", "確認", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK) {
+                if (MessageBox.Show(Properties.Resources.Noauth_MBtext, Properties.Resources.Noauth_MBtitle, MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK) {
                     Form3 OAuth = new Form3();
                     OAuth.ShowDialog(this);
                     MainIni.Auth = true;
                     TweetText_TextChanged(null, null);
-                    TweetStatus.Text = "認証済み";
+                    TweetStatus.Text = Properties.Resources.Authed;
                 }
                 return;
             }
             // 固まるからどうにかしなければ
             if(Convert.ToInt16(TweetButton.Text) < 0) {
-                TweetStatus.Text = "140文字を超えています";
+                TweetStatus.Text = Properties.Resources.TextOver;
                 return;
             }
             Tokens token = null;
@@ -100,12 +98,12 @@ namespace waifuinwindow {
                 token = CoreTweet.Tokens.Create(DecodeKey.GetKey(1), DecodeKey.GetKey(2), MainIni.Token, MainIni.TokenSecret);
             }
             catch (System.Exception ex)  {
-                TweetStatus.Text = "トークンエラー";
-                MessageBox.Show("トークンの生成に失敗しました\nこのエラーが複数回出る場合はsetting.iniを一度削除してください\n" + ex.Message, "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                TweetStatus.Text = Properties.Resources.TokenError_status;
+                MessageBox.Show(Properties.Resources.TokenError_MBtext + ex.Message, Properties.Resources.Error_MBtitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             var MediaId = new List<long>();
-            TweetStatus.Text = "ツイートを送信中";
+            TweetStatus.Text = Properties.Resources.Tweet_Sending;
             this.Refresh();
             if (Image1.Checked && screen[0] != null) MediaId.Add(token.Media.Upload(media: ConvertImageToBytes(screen[0])).MediaId);
             if (Image2.Checked && screen[1] != null) MediaId.Add(token.Media.Upload(media: ConvertImageToBytes(screen[1])).MediaId);
@@ -114,7 +112,7 @@ namespace waifuinwindow {
             string statustext = TweetText.Text;
             if (FooterMode.Checked) statustext += " " + FooterText.Text;
             if (statustext == "" && MediaId.Count == 0) {
-                TweetStatus.Text = "送信内容がありません";
+                TweetStatus.Text = Properties.Resources.NoData;
                 return;
             }
             try {
@@ -124,13 +122,13 @@ namespace waifuinwindow {
                             );
             }
             catch (System.Exception ex) {
-                TweetStatus.Text = "送信エラー";
-                MessageBox.Show("ツイートの送信に失敗しました\n画像サイズが大きすぎる可能性があります\n" + ex.Message, "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                TweetStatus.Text = Properties.Resources.SendError_status;
+                MessageBox.Show(Properties.Resources.SendError_MBtext + ex.Message, Properties.Resources.Error_MBtitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             TweetText.Text = "";
             TweetButton.Text = "140";
-            TweetStatus.Text = "送信完了 - " + System.DateTime.Now.ToString("HH:mm:ss");
+            TweetStatus.Text = Properties.Resources.Tweet_Sent + System.DateTime.Now.ToString("HH:mm:ss");
         }
 
         private byte[] ConvertImageToBytes(Image img) {
@@ -182,9 +180,9 @@ namespace waifuinwindow {
             sfd.FileName = exeName.Text + "_" + System.DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
             sfd.InitialDirectory = MainIni.SaveDir;
             //[ファイルの種類]に表示される選択肢を指定する
-            sfd.Filter = "PNGファイル(*.png)|*.png";
+            sfd.Filter = "PNG Image(*.png)|*.png";
             //タイトルを設定する
-            sfd.Title = "スクショ保存";
+            sfd.Title = Properties.Resources.Save_title;
             //ダイアログを表示する
             if (sfd.ShowDialog() == DialogResult.OK) {
                 capturedImage.Image.Save(sfd.FileName, ImageFormat.Png);
@@ -316,13 +314,15 @@ namespace waifuinwindow {
                 TopMost_Me.Checked = true;
             }
             if (!MainIni.Auth) {
-                TweetButton.Text = "認証";
-                TweetStatus.Text = "認証を行ってください";
+                TweetButton.Text = Properties.Resources.Noauth_button;
+                TweetStatus.Text = Properties.Resources.Noauth_status;
             }
             ModeSelect.SelectedIndex = 2;
             Screen1.Select();
             UpdateButton_Click(null, null);
             if (MainIni.UseShortcut) SetHotkey();
+            checker.Interval = 5000;
+            checker.Tick += WindowCheck;
         }
 
         private void SetHotkey() {
@@ -339,7 +339,7 @@ namespace waifuinwindow {
             foreach(Process check in Process.GetProcessesByName(exeName.Text)) {
                 if (check.MainWindowHandle == Target.handle) return;
             }
-            StatusLabel.Text = "ウィンドウを見失いました";
+            StatusLabel.Text = Properties.Resources.Lost;
             Target = null;
             exeName.Text = "";
             ModeSelect.SelectedIndex = 2;

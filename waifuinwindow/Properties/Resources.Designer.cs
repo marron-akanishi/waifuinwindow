@@ -4,47 +4,48 @@
 //     ランタイム バージョン:4.0.30319.42000
 //
 //     このファイルへの変更は、以下の状況下で不正な動作の原因になったり、
-//     コードが再生成されるときに損失したりします
+//     コードが再生成されるときに損失したりします。
 // </auto-generated>
 //------------------------------------------------------------------------------
 
 namespace waifuinwindow.Properties {
-
-
+    using System;
+    
+    
     /// <summary>
     ///   ローカライズされた文字列などを検索するための、厳密に型指定されたリソース クラスです。
     /// </summary>
     // このクラスは StronglyTypedResourceBuilder クラスが ResGen
     // または Visual Studio のようなツールを使用して自動生成されました。
     // メンバーを追加または削除するには、.ResX ファイルを編集して、/str オプションと共に
-    // ResGen を実行し直すか、または VS プロジェクトをリビルドします。
+    // ResGen を実行し直すか、または VS プロジェクトをビルドし直します。
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
-
+        
         private static global::System.Resources.ResourceManager resourceMan;
-
+        
         private static global::System.Globalization.CultureInfo resourceCulture;
-
+        
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
         internal Resources() {
         }
-
+        
         /// <summary>
-        ///   このクラスで使用されるキャッシュされた ResourceManager インスタンスを返します。
+        ///   このクラスで使用されているキャッシュされた ResourceManager インスタンスを返します。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
-                if ((resourceMan == null)) {
+                if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("waifuinwindow.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
             }
         }
-
+        
         /// <summary>
         ///   厳密に型指定されたこのリソース クラスを使用して、すべての検索リソースに対し、
         ///   現在のスレッドの CurrentUICulture プロパティをオーバーライドします。
@@ -56,6 +57,159 @@ namespace waifuinwindow.Properties {
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Authenticated に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string Authed {
+            get {
+                return ResourceManager.GetString("Authed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Discover the window - に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string Discover {
+            get {
+                return ResourceManager.GetString("Discover", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Error に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string Error_MBtitle {
+            get {
+                return ResourceManager.GetString("Error_MBtitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Lost the window に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string Lost {
+            get {
+                return ResourceManager.GetString("Lost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Auth に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string Noauth_button {
+            get {
+                return ResourceManager.GetString("Noauth_button", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Twitter authentication is not done. \nDo you do authentication? に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string Noauth_MBtext {
+            get {
+                return ResourceManager.GetString("Noauth_MBtext", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Confirm に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string Noauth_MBtitle {
+            get {
+                return ResourceManager.GetString("Noauth_MBtitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Please authenticate に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string Noauth_status {
+            get {
+                return ResourceManager.GetString("Noauth_status", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   There are no contents に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string NoData {
+            get {
+                return ResourceManager.GetString("NoData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Save screenshot に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string Save_title {
+            get {
+                return ResourceManager.GetString("Save_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Failed to send Tweet.\nThe image size may be too large.\n に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string SendError_MBtext {
+            get {
+                return ResourceManager.GetString("SendError_MBtext", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sending error に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string SendError_status {
+            get {
+                return ResourceManager.GetString("SendError_status", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   The tweet is over 140 characters に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string TextOver {
+            get {
+                return ResourceManager.GetString("TextOver", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Failed to generate token. \nIf this error occurs more than once please delete setting.ini.\n に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string TokenError_MBtext {
+            get {
+                return ResourceManager.GetString("TokenError_MBtext", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Token error に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string TokenError_status {
+            get {
+                return ResourceManager.GetString("TokenError_status", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sending に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string Tweet_Sending {
+            get {
+                return ResourceManager.GetString("Tweet_Sending", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sent -  に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string Tweet_Sent {
+            get {
+                return ResourceManager.GetString("Tweet_Sent", resourceCulture);
             }
         }
     }

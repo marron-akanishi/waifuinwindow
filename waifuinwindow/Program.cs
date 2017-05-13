@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Globalization;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
@@ -9,7 +10,6 @@ namespace waifuinwindow {
         /// <summary>
         /// アプリケーションのメイン エントリ ポイントです。
         /// </summary>
-        /// 
         static public Rectangle DispSize = new Rectangle(0, 0, 0, 0);
         static public Rectangle SelArea = new Rectangle(0, 0, 0, 0);
 
@@ -24,7 +24,10 @@ namespace waifuinwindow {
         extern static int ReleaseDC(IntPtr hwnd, IntPtr hdc);
 
         [STAThread]
-        static void Main() {
+        static void Main(string[] args) {
+            if (args.Length > 0) {
+                System.Threading.Thread.CurrentThread.CurrentUICulture = new CultureInfo(args[0], false);
+            }
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //全ディスプレイを合わせたサイズを取得する
