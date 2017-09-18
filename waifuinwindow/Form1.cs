@@ -274,8 +274,13 @@ namespace waifuinwindow {
         }
 
         private void TopMost_Target_CheckedChanged(object sender, EventArgs e) {
-            if (TopMost_Target.Checked) Target.SetWindowDispMode("TOPMOST");
-            else Target.SetWindowDispMode("NOTOPMOST");
+            try {
+                if (TopMost_Target.Checked) Target.SetWindowDispMode("TOPMOST");
+                else Target.SetWindowDispMode("NOTOPMOST");
+            }
+            catch {
+                TopMost_Target.Checked = false;
+            }
         }
 
         private void UpdateButton_Click(object sender, EventArgs e) {
@@ -344,6 +349,29 @@ namespace waifuinwindow {
             exeName.Text = "";
             ModeSelect.SelectedIndex = 2;
             checker.Stop();
+        }
+
+        private void Mute_Target_CheckedChanged(object sender, EventArgs e) {
+            try {
+                //プロセスID取得
+                Process[] ps = Process.GetProcessesByName(exeName.Text);
+                //ProcessStartInfoオブジェクトを作成する
+                ProcessStartInfo psi = new ProcessStartInfo();
+                psi.FileName = "Mute.exe";
+                psi.CreateNoWindow = true;
+                psi.UseShellExecute = false;
+
+                if (Mute_Target.Checked) {
+                    psi.Arguments = ps[0].Id.ToString() + " 1";
+                    Process.Start(psi);
+                } else {
+                    psi.Arguments = ps[0].Id.ToString() + " 0";
+                    Process.Start(psi);
+                }
+            }
+            catch {
+                Mute_Target.Checked = false;
+            }
         }
     }
 }

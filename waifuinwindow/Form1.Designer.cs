@@ -53,6 +53,7 @@
             this.exeName = new System.Windows.Forms.ComboBox();
             this.UpdateButton = new System.Windows.Forms.Button();
             this.SettingButton = new System.Windows.Forms.Button();
+            this.Mute_Target = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.capturedImage)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -256,11 +257,19 @@
             this.SettingButton.UseVisualStyleBackColor = true;
             this.SettingButton.Click += new System.EventHandler(this.SettingButton_Click);
             // 
+            // Mute_Target
+            // 
+            resources.ApplyResources(this.Mute_Target, "Mute_Target");
+            this.Mute_Target.Name = "Mute_Target";
+            this.Mute_Target.UseVisualStyleBackColor = true;
+            this.Mute_Target.CheckedChanged += new System.EventHandler(this.Mute_Target_CheckedChanged);
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             this.AllowDrop = true;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.Mute_Target);
             this.Controls.Add(this.SettingButton);
             this.Controls.Add(this.UpdateButton);
             this.Controls.Add(this.exeName);
@@ -333,6 +342,7 @@
         private System.Windows.Forms.ComboBox exeName;
         private System.Windows.Forms.Button UpdateButton;
         private System.Windows.Forms.Button SettingButton;
+        private System.Windows.Forms.CheckBox Mute_Target;
     }
 }
 
