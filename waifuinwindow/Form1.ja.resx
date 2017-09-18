@@ -121,11 +121,17 @@
     <value>キャプチャー</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="TopMost_Me.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 550</value>
+  </data>
   <data name="TopMost_Me.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 16</value>
+    <value>114, 19</value>
   </data>
   <data name="TopMost_Me.Text" xml:space="preserve">
     <value>最前面(自分)</value>
+  </data>
+  <data name="ImageSaveButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>167, 485</value>
   </data>
   <data name="ImageSaveButton.Text" xml:space="preserve">
     <value>保存</value>
@@ -134,31 +140,38 @@
     <value>選択</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 12</value>
+    <value>89, 15</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>キャプチャー先</value>
   </data>
+  <data name="TopMost_Target.Location" type="System.Drawing.Point, System.Drawing">
+    <value>140, 550</value>
+  </data>
   <data name="TopMost_Target.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 16</value>
+    <value>114, 19</value>
   </data>
   <data name="TopMost_Target.Text" xml:space="preserve">
     <value>最前面(相手)</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="statusStrip1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>1, 0, 19, 0</value>
+  </data>
   <data name="StatusLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 17</value>
+    <value>69, 20</value>
   </data>
   <data name="StatusLabel.Text" xml:space="preserve">
     <value>準備完了</value>
   </data>
   <data name="TweetStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>397, 17</value>
+    <value>534, 20</value>
   </data>
   <data name="TweetStatus.Text" xml:space="preserve">
     <value>認証済み</value>
   </data>
   <data name="ResizeMode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 16</value>
+    <value>126, 19</value>
   </data>
   <data name="ResizeMode.Text" xml:space="preserve">
     <value>画像縮小(全て)</value>
@@ -171,6 +184,12 @@
   </data>
   <data name="SettingButton.Text" xml:space="preserve">
     <value>設定</value>
+  </data>
+  <data name="Mute_Target.Size" type="System.Drawing.Size, System.Drawing">
+    <value>111, 19</value>
+  </data>
+  <data name="Mute_Target.Text" xml:space="preserve">
+    <value>ミュート(相手)</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -458,5 +477,8 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////////////////////////
         //////////////////////////////////////////////////8=
 </value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
 </root>
