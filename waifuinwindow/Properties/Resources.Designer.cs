@@ -70,7 +70,7 @@ namespace waifuinwindow.Properties {
         }
         
         /// <summary>
-        ///   Discover the window - に類似しているローカライズされた文字列を検索します。
+        ///   Discover the window -  に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Discover {
             get {
@@ -106,7 +106,8 @@ namespace waifuinwindow.Properties {
         }
         
         /// <summary>
-        ///   Twitter authentication is not done. \nDo you do authentication? に類似しているローカライズされた文字列を検索します。
+        ///   Twitter authentication is not done. 
+        ///Do you do authentication? に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Noauth_MBtext {
             get {
@@ -151,7 +152,9 @@ namespace waifuinwindow.Properties {
         }
         
         /// <summary>
-        ///   Failed to send Tweet.\nThe image size may be too large.\n に類似しているローカライズされた文字列を検索します。
+        ///   Failed to send Tweet.
+        ///The image size may be too large.
+        /// に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string SendError_MBtext {
             get {
@@ -178,7 +181,9 @@ namespace waifuinwindow.Properties {
         }
         
         /// <summary>
-        ///   Failed to generate token. \nIf this error occurs more than once please delete setting.ini.\n に類似しているローカライズされた文字列を検索します。
+        ///   Failed to generate token. 
+        ///If this error occurs more than once please delete setting.ini.
+        /// に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string TokenError_MBtext {
             get {

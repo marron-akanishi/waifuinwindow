@@ -117,181 +117,743 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;TopMost_Target.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="StatusLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>39, 17</value>
+  <data name="capturedImage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 12</value>
+  </data>
+  <data name="capturedImage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>443, 257</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="capturedImage.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>Zoom</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="ImageCapButton.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+  <data name="capturedImage.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
-  <data name="Screen2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>262, 297</value>
+  <data name="&gt;&gt;capturedImage.Name" xml:space="preserve">
+    <value>capturedImage</value>
   </data>
-  <data name="SettingButton.TabIndex" type="System.Int32, mscorlib">
-    <value>32</value>
+  <data name="&gt;&gt;capturedImage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="TweetText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>230, 81</value>
+  <data name="&gt;&gt;capturedImage.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="statusStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>467, 22</value>
-  </data>
-  <data name="Screen1.Text" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="TopMost_Me.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 454</value>
-  </data>
-  <data name="Image1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;Image4.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;Image1.ZOrder" xml:space="preserve">
-    <value>16</value>
-  </data>
-  <data name="&gt;&gt;Screen2.Name" xml:space="preserve">
-    <value>Screen2</value>
-  </data>
-  <data name="&gt;&gt;AreaLabel.ZOrder" xml:space="preserve">
-    <value>18</value>
+  <data name="&gt;&gt;capturedImage.ZOrder" xml:space="preserve">
+    <value>25</value>
   </data>
   <data name="ImageCapButton.Font" type="System.Drawing.Font, System.Drawing">
     <value>MS UI Gothic, 9pt</value>
   </data>
-  <data name="statusStrip1.TabIndex" type="System.Int32, mscorlib">
-    <value>28</value>
+  <data name="ImageCapButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 388</value>
   </data>
-  <data name="&gt;&gt;exeSetButton.Type" xml:space="preserve">
+  <data name="ImageCapButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 58</value>
+  </data>
+  <data name="ImageCapButton.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="ImageCapButton.Text" xml:space="preserve">
+    <value>Capture</value>
+  </data>
+  <data name="&gt;&gt;ImageCapButton.Name" xml:space="preserve">
+    <value>ImageCapButton</value>
+  </data>
+  <data name="&gt;&gt;ImageCapButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="FooterText.TabIndex" type="System.Int32, mscorlib">
-    <value>26</value>
+  <data name="&gt;&gt;ImageCapButton.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="Screen1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="TweetText.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+  <data name="&gt;&gt;ImageCapButton.ZOrder" xml:space="preserve">
+    <value>24</value>
   </data>
   <data name="TweetButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>367, 428</value>
   </data>
-  <data name="Screen2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="TweetText.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="TopMost_Target.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 16</value>
-  </data>
-  <data name="FooterMode.TabIndex" type="System.Int32, mscorlib">
-    <value>25</value>
-  </data>
-  <data name="Screen3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>29, 16</value>
-  </data>
-  <data name="ModeSelect.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="exeSetButton.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="AreaSelButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>165, 331</value>
-  </data>
-  <data name="&gt;&gt;Screen3.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;StatusLabel.Name" xml:space="preserve">
-    <value>StatusLabel</value>
-  </data>
-  <data name="&gt;&gt;AreaSelButton.Name" xml:space="preserve">
-    <value>AreaSelButton</value>
-  </data>
-  <data name="&gt;&gt;ImageSaveButton.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 12</value>
-  </data>
-  <data name="&gt;&gt;Screen3.Name" xml:space="preserve">
-    <value>Screen3</value>
-  </data>
-  <data name="&gt;&gt;StatusLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="Screen4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>332, 297</value>
-  </data>
-  <data name="Image1.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="AreaLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 12</value>
-  </data>
-  <data name="TweetText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>225, 319</value>
-  </data>
-  <data name="&gt;&gt;Image1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AreaSelButton.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;statusStrip1.Name" xml:space="preserve">
-    <value>statusStrip1</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>WaifuInWindow</value>
+  <data name="TweetButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 42</value>
   </data>
   <data name="TweetButton.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="&gt;&gt;TweetText.ZOrder" xml:space="preserve">
-    <value>22</value>
+  <data name="TweetButton.Text" xml:space="preserve">
+    <value>140</value>
   </data>
-  <data name="&gt;&gt;AreaLabel.Name" xml:space="preserve">
-    <value>AreaLabel</value>
+  <data name="&gt;&gt;TweetButton.Name" xml:space="preserve">
+    <value>TweetButton</value>
   </data>
   <data name="&gt;&gt;TweetButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;TweetButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;TweetButton.ZOrder" xml:space="preserve">
+    <value>23</value>
+  </data>
+  <data name="TweetText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>225, 319</value>
+  </data>
+  <data name="TweetText.MaxLength" type="System.Int32, mscorlib">
+    <value>140</value>
+  </data>
+  <data name="TweetText.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="TweetText.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>Both</value>
+  </data>
+  <data name="TweetText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>230, 81</value>
+  </data>
+  <data name="TweetText.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;TweetText.Name" xml:space="preserve">
+    <value>TweetText</value>
+  </data>
+  <data name="&gt;&gt;TweetText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TweetText.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;TweetText.ZOrder" xml:space="preserve">
+    <value>22</value>
+  </data>
+  <data name="TopMost_Me.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="TopMost_Me.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 454</value>
+  </data>
+  <data name="TopMost_Me.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 16</value>
+  </data>
   <data name="TopMost_Me.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="&gt;&gt;SettingButton.Parent" xml:space="preserve">
+  <data name="TopMost_Me.Text" xml:space="preserve">
+    <value>TopMost(Me)</value>
+  </data>
+  <data name="&gt;&gt;TopMost_Me.Name" xml:space="preserve">
+    <value>TopMost_Me</value>
+  </data>
+  <data name="&gt;&gt;TopMost_Me.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TopMost_Me.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="ResizeMode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>114, 16</value>
+  <data name="&gt;&gt;TopMost_Me.ZOrder" xml:space="preserve">
+    <value>21</value>
   </data>
-  <data name="Image2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 16</value>
+  <data name="ImageSaveButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>125, 388</value>
   </data>
-  <data name="TopMost_Target.TabIndex" type="System.Int32, mscorlib">
-    <value>27</value>
+  <data name="ImageSaveButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 58</value>
   </data>
-  <data name="&gt;&gt;ModeSelect.ZOrder" xml:space="preserve">
-    <value>19</value>
+  <data name="ImageSaveButton.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
   </data>
-  <data name="&gt;&gt;Screen4.ZOrder" xml:space="preserve">
-    <value>9</value>
+  <data name="ImageSaveButton.Text" xml:space="preserve">
+    <value>Save</value>
   </data>
-  <data name="Image2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;ImageSaveButton.Name" xml:space="preserve">
+    <value>ImageSaveButton</value>
+  </data>
+  <data name="&gt;&gt;ImageSaveButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ImageSaveButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ImageSaveButton.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="ModeSelect.Items" xml:space="preserve">
+    <value>DeviceContext</value>
+  </data>
+  <data name="ModeSelect.Items1" xml:space="preserve">
+    <value>WindowArea</value>
   </data>
   <data name="ModeSelect.Items2" xml:space="preserve">
     <value>SelectArea</value>
   </data>
+  <data name="ModeSelect.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 360</value>
+  </data>
+  <data name="ModeSelect.Size" type="System.Drawing.Size, System.Drawing">
+    <value>207, 20</value>
+  </data>
+  <data name="ModeSelect.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;ModeSelect.Name" xml:space="preserve">
+    <value>ModeSelect</value>
+  </data>
+  <data name="&gt;&gt;ModeSelect.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ModeSelect.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ModeSelect.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="AreaLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="AreaLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 336</value>
+  </data>
+  <data name="AreaLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 12</value>
+  </data>
+  <data name="AreaLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="AreaLabel.Text" xml:space="preserve">
+    <value>X:9999 Y:9999 W:9999 H:9999</value>
+  </data>
+  <data name="AreaLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;AreaLabel.Name" xml:space="preserve">
+    <value>AreaLabel</value>
+  </data>
+  <data name="&gt;&gt;AreaLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AreaLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;AreaLabel.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="AreaSelButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>165, 331</value>
+  </data>
+  <data name="AreaSelButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 23</value>
+  </data>
+  <data name="AreaSelButton.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="AreaSelButton.Text" xml:space="preserve">
+    <value>Sel</value>
+  </data>
+  <data name="&gt;&gt;AreaSelButton.Name" xml:space="preserve">
+    <value>AreaSelButton</value>
+  </data>
+  <data name="&gt;&gt;AreaSelButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AreaSelButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;AreaSelButton.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="Image1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Image1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>225, 432</value>
+  </data>
+  <data name="Image1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 16</value>
+  </data>
+  <data name="Image1.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="Image1.Text" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;Image1.Name" xml:space="preserve">
+    <value>Image1</value>
+  </data>
+  <data name="&gt;&gt;Image1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Image1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Image1.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="Image2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Image2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>261, 432</value>
+  </data>
+  <data name="Image2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 16</value>
+  </data>
+  <data name="Image2.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="Image2.Text" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;Image2.Name" xml:space="preserve">
+    <value>Image2</value>
+  </data>
+  <data name="&gt;&gt;Image2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;Image2.Parent" xml:space="preserve">
     <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Image2.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="Image3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Image3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>297, 432</value>
+  </data>
+  <data name="Image3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 16</value>
+  </data>
+  <data name="Image3.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="Image3.Text" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;Image3.Name" xml:space="preserve">
+    <value>Image3</value>
+  </data>
+  <data name="&gt;&gt;Image3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Image3.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Image3.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="Image4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Image4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>331, 432</value>
+  </data>
+  <data name="Image4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 16</value>
+  </data>
+  <data name="Image4.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="Image4.Text" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;Image4.Name" xml:space="preserve">
+    <value>Image4</value>
+  </data>
+  <data name="&gt;&gt;Image4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Image4.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Image4.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="Screen1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Screen1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>227, 297</value>
+  </data>
+  <data name="Screen1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 16</value>
+  </data>
+  <data name="Screen1.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="Screen1.Text" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;Screen1.Name" xml:space="preserve">
+    <value>Screen1</value>
+  </data>
+  <data name="&gt;&gt;Screen1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Screen1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Screen1.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="Screen2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Screen2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>262, 297</value>
+  </data>
+  <data name="Screen2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 16</value>
+  </data>
+  <data name="Screen2.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="Screen2.Text" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;Screen2.Name" xml:space="preserve">
+    <value>Screen2</value>
+  </data>
+  <data name="&gt;&gt;Screen2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Screen2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Screen2.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="Screen3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Screen3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>298, 297</value>
+  </data>
+  <data name="Screen3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 16</value>
+  </data>
+  <data name="Screen3.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="Screen3.Text" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;Screen3.Name" xml:space="preserve">
+    <value>Screen3</value>
+  </data>
+  <data name="&gt;&gt;Screen3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Screen3.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Screen3.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="Screen4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Screen4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>332, 297</value>
+  </data>
+  <data name="Screen4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 16</value>
+  </data>
+  <data name="Screen4.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="Screen4.Text" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;Screen4.Name" xml:space="preserve">
+    <value>Screen4</value>
+  </data>
+  <data name="&gt;&gt;Screen4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Screen4.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Screen4.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>225, 280</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 12</value>
+  </data>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>CapturedScreen</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="FooterMode.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="FooterMode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>225, 408</value>
+  </data>
+  <data name="FooterMode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 16</value>
+  </data>
+  <data name="FooterMode.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="FooterMode.Text" xml:space="preserve">
+    <value>Footer：</value>
+  </data>
+  <data name="&gt;&gt;FooterMode.Name" xml:space="preserve">
+    <value>FooterMode</value>
+  </data>
+  <data name="&gt;&gt;FooterMode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;FooterMode.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;FooterMode.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="FooterText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>284, 406</value>
+  </data>
+  <data name="FooterText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>170, 19</value>
+  </data>
+  <data name="FooterText.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="&gt;&gt;FooterText.Name" xml:space="preserve">
+    <value>FooterText</value>
+  </data>
+  <data name="&gt;&gt;FooterText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;FooterText.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;FooterText.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="TopMost_Target.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="TopMost_Target.Location" type="System.Drawing.Point, System.Drawing">
+    <value>110, 454</value>
+  </data>
+  <data name="TopMost_Target.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 16</value>
+  </data>
+  <data name="TopMost_Target.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="TopMost_Target.Text" xml:space="preserve">
+    <value>TopMost(Target)</value>
+  </data>
+  <data name="&gt;&gt;TopMost_Target.Name" xml:space="preserve">
+    <value>TopMost_Target</value>
+  </data>
+  <data name="&gt;&gt;TopMost_Target.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TopMost_Target.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;TopMost_Target.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <metadata name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>16, 16</value>
+  </metadata>
+  <data name="StatusLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 17</value>
+  </data>
+  <data name="StatusLabel.Text" xml:space="preserve">
+    <value>Ready</value>
+  </data>
+  <data name="TweetStatus.Size" type="System.Drawing.Size, System.Drawing">
+    <value>413, 17</value>
+  </data>
+  <data name="TweetStatus.Text" xml:space="preserve">
+    <value>Authenticated</value>
+  </data>
+  <data name="TweetStatus.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="statusStrip1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 477</value>
+  </data>
+  <data name="statusStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>467, 22</value>
+  </data>
+  <data name="statusStrip1.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="statusStrip1.Text" xml:space="preserve">
+    <value>statusStrip1</value>
+  </data>
+  <data name="&gt;&gt;statusStrip1.Name" xml:space="preserve">
+    <value>statusStrip1</value>
+  </data>
+  <data name="&gt;&gt;statusStrip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;statusStrip1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;statusStrip1.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="ResizeMode.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ResizeMode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>225, 454</value>
+  </data>
+  <data name="ResizeMode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>114, 16</value>
+  </data>
+  <data name="ResizeMode.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="ResizeMode.Text" xml:space="preserve">
+    <value>Resize Image(All)</value>
+  </data>
+  <data name="&gt;&gt;ResizeMode.Name" xml:space="preserve">
+    <value>ResizeMode</value>
+  </data>
+  <data name="&gt;&gt;ResizeMode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ResizeMode.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ResizeMode.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="exeSetButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>125, 303</value>
+  </data>
+  <data name="exeSetButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 23</value>
+  </data>
+  <data name="exeSetButton.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="exeSetButton.Text" xml:space="preserve">
+    <value>Set</value>
+  </data>
+  <data name="&gt;&gt;exeSetButton.Name" xml:space="preserve">
+    <value>exeSetButton</value>
+  </data>
+  <data name="&gt;&gt;exeSetButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;exeSetButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;exeSetButton.ZOrder" xml:space="preserve">
+    <value>26</value>
+  </data>
+  <data name="exeName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 277</value>
+  </data>
+  <data name="exeName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>206, 20</value>
+  </data>
+  <data name="exeName.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="&gt;&gt;exeName.Name" xml:space="preserve">
+    <value>exeName</value>
+  </data>
+  <data name="&gt;&gt;exeName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;exeName.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;exeName.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="UpdateButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 303</value>
+  </data>
+  <data name="UpdateButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 23</value>
+  </data>
+  <data name="UpdateButton.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="UpdateButton.Text" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="&gt;&gt;UpdateButton.Name" xml:space="preserve">
+    <value>UpdateButton</value>
+  </data>
+  <data name="&gt;&gt;UpdateButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;UpdateButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;UpdateButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="SettingButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>367, 280</value>
+  </data>
+  <data name="SettingButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="SettingButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 32</value>
+  </data>
+  <data name="SettingButton.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="SettingButton.Text" xml:space="preserve">
+    <value>Setting</value>
+  </data>
+  <data name="&gt;&gt;SettingButton.Name" xml:space="preserve">
+    <value>SettingButton</value>
+  </data>
+  <data name="&gt;&gt;SettingButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SettingButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;SettingButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>ja</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 12</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>467, 499</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -580,590 +1142,28 @@
         //////////////////////////////////////////////////8=
 </value>
   </data>
-  <data name="ImageSaveButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>125, 388</value>
-  </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="Screen4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>29, 16</value>
-  </data>
-  <data name="&gt;&gt;AreaLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Screen1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TopMost_Me.ZOrder" xml:space="preserve">
-    <value>21</value>
-  </data>
-  <data name="ResizeMode.TabIndex" type="System.Int32, mscorlib">
-    <value>29</value>
-  </data>
-  <data name="&gt;&gt;capturedImage.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="TweetButton.Text" xml:space="preserve">
-    <value>140</value>
-  </data>
-  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="exeSetButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>125, 303</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="capturedImage.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>Zoom</value>
-  </data>
-  <data name="&gt;&gt;Image4.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="FooterMode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>225, 408</value>
-  </data>
-  <data name="TweetStatus.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="TopMost_Me.Size" type="System.Drawing.Size, System.Drawing">
-    <value>91, 16</value>
-  </data>
-  <data name="ImageSaveButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 58</value>
-  </data>
-  <data name="ResizeMode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>225, 454</value>
-  </data>
-  <data name="Screen1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>227, 297</value>
-  </data>
-  <data name="&gt;&gt;FooterText.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;FooterMode.Name" xml:space="preserve">
-    <value>FooterMode</value>
-  </data>
-  <data name="AreaSelButton.Text" xml:space="preserve">
-    <value>Sel</value>
-  </data>
-  <data name="&gt;&gt;ImageSaveButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SettingButton.Name" xml:space="preserve">
-    <value>SettingButton</value>
-  </data>
-  <data name="Screen2.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
-  <data name="Image3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 16</value>
-  </data>
-  <data name="&gt;&gt;FooterText.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;exeSetButton.ZOrder" xml:space="preserve">
-    <value>26</value>
-  </data>
-  <data name="Image2.Text" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;ImageCapButton.Name" xml:space="preserve">
-    <value>ImageCapButton</value>
-  </data>
-  <data name="&gt;&gt;Image3.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
-  <data name="&gt;&gt;exeName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;statusStrip1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;FooterMode.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="capturedImage.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="AreaSelButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 23</value>
-  </data>
-  <data name="ImageCapButton.Text" xml:space="preserve">
-    <value>Capture</value>
-  </data>
-  <data name="&gt;&gt;exeName.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="Screen3.Text" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="statusStrip1.Text" xml:space="preserve">
-    <value>statusStrip1</value>
-  </data>
-  <data name="&gt;&gt;Image4.Name" xml:space="preserve">
-    <value>Image4</value>
-  </data>
-  <data name="ModeSelect.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 20</value>
-  </data>
-  <data name="TweetStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>413, 17</value>
-  </data>
-  <data name="ImageCapButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 58</value>
-  </data>
-  <data name="&gt;&gt;AreaLabel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="FooterMode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>63, 16</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>Form1</value>
-  </data>
-  <data name="Screen2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>29, 16</value>
-  </data>
-  <data name="&gt;&gt;TweetText.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="ModeSelect.Items" xml:space="preserve">
-    <value>DeviceContext</value>
-  </data>
-  <data name="&gt;&gt;TweetButton.Name" xml:space="preserve">
-    <value>TweetButton</value>
-  </data>
-  <data name="&gt;&gt;Screen2.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="TopMost_Me.Text" xml:space="preserve">
-    <value>TopMost(Me)</value>
-  </data>
-  <data name="Image3.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="ResizeMode.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;ModeSelect.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="capturedImage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>443, 257</value>
-  </data>
-  <data name="&gt;&gt;ImageCapButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="ResizeMode.Text" xml:space="preserve">
-    <value>Resize Image(All)</value>
-  </data>
-  <data name="&gt;&gt;TopMost_Me.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TopMost_Me.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;ImageSaveButton.ZOrder" xml:space="preserve">
-    <value>20</value>
-  </data>
-  <data name="&gt;&gt;Image2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ModeSelect.Name" xml:space="preserve">
-    <value>ModeSelect</value>
-  </data>
-  <data name="statusStrip1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 477</value>
-  </data>
-  <data name="AreaLabel.Text" xml:space="preserve">
-    <value>X:9999 Y:9999 W:9999 H:9999</value>
-  </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>Manual</value>
   </data>
-  <data name="&gt;&gt;Screen3.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>WaifuInWindow</value>
   </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;StatusLabel.Name" xml:space="preserve">
+    <value>StatusLabel</value>
   </data>
-  <data name="&gt;&gt;FooterMode.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="SettingButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 32</value>
-  </data>
-  <data name="&gt;&gt;ResizeMode.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="TopMost_Target.Location" type="System.Drawing.Point, System.Drawing">
-    <value>110, 454</value>
-  </data>
-  <data name="Image1.Text" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;Image1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="capturedImage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 12</value>
-  </data>
-  <data name="&gt;&gt;capturedImage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ModeSelect.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="TweetText.MaxLength" type="System.Int32, mscorlib">
-    <value>140</value>
-  </data>
-  <data name="&gt;&gt;TweetButton.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="ImageSaveButton.Text" xml:space="preserve">
-    <value>Save</value>
-  </data>
-  <data name="Image4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>331, 432</value>
-  </data>
-  <data name="&gt;&gt;ResizeMode.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;FooterMode.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;Screen4.Name" xml:space="preserve">
-    <value>Screen4</value>
-  </data>
-  <data name="AreaLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="exeName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>206, 20</value>
-  </data>
-  <data name="Image1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>225, 432</value>
-  </data>
-  <data name="&gt;&gt;TweetStatus.Type" xml:space="preserve">
+  <data name="&gt;&gt;StatusLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Screen1.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="&gt;&gt;AreaSelButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ImageCapButton.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="Image3.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="Image1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 16</value>
-  </data>
-  <data name="&gt;&gt;capturedImage.Name" xml:space="preserve">
-    <value>capturedImage</value>
-  </data>
-  <data name="UpdateButton.Text" xml:space="preserve">
-    <value>Update</value>
-  </data>
-  <data name="&gt;&gt;Screen2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;statusStrip1.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="label2.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
-  </data>
-  <data name="SettingButton.Text" xml:space="preserve">
-    <value>Setting</value>
-  </data>
-  <data name="&gt;&gt;ResizeMode.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="ImageSaveButton.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;Image3.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;Screen4.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="exeSetButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>94, 23</value>
-  </data>
-  <data name="&gt;&gt;ResizeMode.Name" xml:space="preserve">
-    <value>ResizeMode</value>
-  </data>
-  <data name="Image4.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="ModeSelect.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 360</value>
-  </data>
-  <data name="Image3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>297, 432</value>
-  </data>
-  <data name="FooterText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>170, 19</value>
-  </data>
-  <data name="FooterMode.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="TopMost_Target.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="Image2.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="&gt;&gt;Screen1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="Screen1.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="TopMost_Me.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;Screen3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="AreaLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;TweetText.Name" xml:space="preserve">
-    <value>TweetText</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TweetStatus.Name" xml:space="preserve">
     <value>TweetStatus</value>
   </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>CapturedScreen</value>
+  <data name="&gt;&gt;TweetStatus.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;Image3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Form1</value>
   </data>
-  <data name="TopMost_Target.Text" xml:space="preserve">
-    <value>TopMost(Target)</value>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ImageCapButton.ZOrder" xml:space="preserve">
-    <value>24</value>
-  </data>
-  <data name="&gt;&gt;TopMost_Target.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;Image4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="exeSetButton.Text" xml:space="preserve">
-    <value>Set</value>
-  </data>
-  <data name="FooterMode.Text" xml:space="preserve">
-    <value>Footer：</value>
-  </data>
-  <data name="&gt;&gt;label2.Name" xml:space="preserve">
-    <value>label2</value>
-  </data>
-  <data name="Screen4.Text" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="exeName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 277</value>
-  </data>
-  <data name="&gt;&gt;Image2.Name" xml:space="preserve">
-    <value>Image2</value>
-  </data>
-  <data name="&gt;&gt;exeName.Name" xml:space="preserve">
-    <value>exeName</value>
-  </data>
-  <data name="ModeSelect.Items1" xml:space="preserve">
-    <value>WindowArea</value>
-  </data>
-  <data name="Image4.Text" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 12</value>
-  </data>
-  <data name="&gt;&gt;Image2.ZOrder" xml:space="preserve">
-    <value>15</value>
-  </data>
-  <data name="&gt;&gt;SettingButton.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="AreaLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="AreaSelButton.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;TweetText.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;exeName.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="AreaLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 336</value>
-  </data>
-  <data name="&gt;&gt;Image1.Name" xml:space="preserve">
-    <value>Image1</value>
-  </data>
-  <data name="&gt;&gt;Image3.Name" xml:space="preserve">
-    <value>Image3</value>
-  </data>
-  <data name="&gt;&gt;exeSetButton.Name" xml:space="preserve">
-    <value>exeSetButton</value>
-  </data>
-  <data name="Screen3.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="Screen3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>298, 297</value>
-  </data>
-  <data name="&gt;&gt;TopMost_Target.Name" xml:space="preserve">
-    <value>TopMost_Target</value>
-  </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>225, 280</value>
-  </data>
-  <data name="UpdateButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 303</value>
-  </data>
-  <data name="SettingButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="&gt;&gt;UpdateButton.Name" xml:space="preserve">
-    <value>UpdateButton</value>
-  </data>
-  <data name="&gt;&gt;Screen1.Name" xml:space="preserve">
-    <value>Screen1</value>
-  </data>
-  <data name="Image4.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;TweetButton.ZOrder" xml:space="preserve">
-    <value>23</value>
-  </data>
-  <data name="Image3.Text" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;statusStrip1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;Screen4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>467, 499</value>
-  </data>
-  <data name="&gt;&gt;UpdateButton.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;FooterText.Name" xml:space="preserve">
-    <value>FooterText</value>
-  </data>
-  <data name="Image4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 16</value>
-  </data>
-  <data name="Screen4.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
-  </data>
-  <data name="TweetText.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
-    <value>Both</value>
-  </data>
-  <data name="TweetButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 42</value>
-  </data>
-  <data name="FooterText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>284, 406</value>
-  </data>
-  <data name="&gt;&gt;TopMost_Me.Name" xml:space="preserve">
-    <value>TopMost_Me</value>
-  </data>
-  <data name="Image2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>261, 432</value>
-  </data>
-  <data name="&gt;&gt;SettingButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="exeName.TabIndex" type="System.Int32, mscorlib">
-    <value>30</value>
-  </data>
-  <data name="&gt;&gt;ImageSaveButton.Name" xml:space="preserve">
-    <value>ImageSaveButton</value>
-  </data>
-  <data name="&gt;&gt;AreaSelButton.ZOrder" xml:space="preserve">
-    <value>17</value>
-  </data>
-  <data name="SettingButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>367, 280</value>
-  </data>
-  <data name="UpdateButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 23</value>
-  </data>
-  <data name="ImageCapButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 388</value>
-  </data>
-  <data name="&gt;&gt;UpdateButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="Screen3.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
-  </data>
-  <data name="&gt;&gt;capturedImage.ZOrder" xml:space="preserve">
-    <value>25</value>
-  </data>
-  <data name="StatusLabel.Text" xml:space="preserve">
-    <value>Ready</value>
-  </data>
-  <data name="&gt;&gt;FooterText.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="Screen2.Text" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="TweetStatus.Text" xml:space="preserve">
-    <value>Authenticated</value>
-  </data>
-  <data name="UpdateButton.TabIndex" type="System.Int32, mscorlib">
-    <value>31</value>
-  </data>
-  <data name="&gt;&gt;TopMost_Target.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;Screen2.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="Screen1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>29, 16</value>
-  </data>
-  <data name="Screen4.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;UpdateButton.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;exeSetButton.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>ja</value>
-  </metadata>
-  <metadata name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>104, 17</value>
-  </metadata>
 </root>

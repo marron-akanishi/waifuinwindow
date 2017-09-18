@@ -21,10 +21,86 @@ namespace waifuinwindow {
             InitializeComponent();
         }
 
+        private void Form1_Load(object sender, EventArgs e) {
+            this.Location = new Point(MainIni.PosX, MainIni.PosY);
+            if (this.Location.X - 100 >= Program.DispSize.Width || this.Location.Y - 100 >= Program.DispSize.Height ||
+                this.Location.X <= Program.DispSize.X || this.Location.Y <= Program.DispSize.Y) {
+                this.Location = new Point(300, 300);
+            }
+            if (MainIni.TopMost) {
+                this.TopMost = true;
+                TopMost_Me.Checked = true;
+            }
+            if (!MainIni.Auth) {
+                TweetButton.Text = Properties.Resources.Noauth_button;
+                TweetStatus.Text = Properties.Resources.Noauth_status;
+            }
+            ModeSelect.SelectedIndex = 2;
+            Screen1.Select();
+            UpdateButton_Click(null, null);
+            if (MainIni.UseShortcut) SetHotkey();
+            checker.Interval = 5000;
+            checker.Tick += WindowCheck;
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e) {
+            if (this.WindowState != FormWindowState.Minimized) {
+                MainIni.PosX = this.Location.X;
+                MainIni.PosY = this.Location.Y;
+            }
+            MainIni.TopMost = this.TopMost;
+            try {
+                hotKey.Dispose();
+            }
+            catch { }
+            if (TopMost_Target.Checked && Target != null) Target.SetWindowDispMode("NOTOPMOST");
+        }
+
+        private void SetHotkey() {
+            KeysConverter convert = new KeysConverter();
+            MOD_KEY modKeys = 0;
+            if (MainIni.UseAlt) modKeys |= MOD_KEY.ALT;
+            if (MainIni.UseCtrl) modKeys |= MOD_KEY.CONTROL;
+            if (MainIni.UseShift) modKeys |= MOD_KEY.SHIFT;
+            hotKey = new HotKey(modKeys, (Keys)convert.ConvertFromString(MainIni.ShortcutKey));
+            hotKey.HotKeyPush += new EventHandler(ImageCapButton_Click);
+        }
+
+        private void WindowCheck(object sender, EventArgs e) {
+            foreach(Process check in Process.GetProcessesByName(exeName.Text)) {
+                if (check.MainWindowHandle == Target.handle) return;
+            }
+            StatusLabel.Text = Properties.Resources.Lost;
+            Target = null;
+            exeName.Text = "";
+            ModeSelect.SelectedIndex = 2;
+            checker.Stop();
+        }
+
         private int GetScreenId() {
             // 指定したグループ内のラジオボタンでチェックされている物を取り出す
             var RadioButtonChecked_InGroup = this.Controls.OfType<RadioButton>().SingleOrDefault(rb => rb.Checked == true);
             return int.Parse(RadioButtonChecked_InGroup.Text) - 1;
+        }
+
+        private void Form1_DragDrop(object sender, DragEventArgs e) {
+            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop, false);
+            string fileName = files[0];
+            if (System.IO.Path.GetExtension(fileName) == ".lnk") fileName = ShortcutToFilePath(fileName);
+            else if (System.IO.Path.GetExtension(fileName) != ".exe") return;
+            exeName.Text = System.IO.Path.GetFileNameWithoutExtension(fileName);
+            string workDir = System.IO.Directory.GetCurrentDirectory();
+            System.IO.Directory.SetCurrentDirectory(System.IO.Path.GetDirectoryName(fileName));
+            System.Diagnostics.Process.Start(fileName);
+            System.IO.Directory.SetCurrentDirectory(workDir);
+        }
+
+        private void Form1_DragEnter(object sender, DragEventArgs e) {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop)) {
+                e.Effect = DragDropEffects.All;
+            } else {
+                e.Effect = DragDropEffects.None;
+            }
         }
 
         private void exeSetButton_Click(object sender, EventArgs e) {
@@ -43,8 +119,8 @@ namespace waifuinwindow {
             StatusLabel.Text = Properties.Resources.Discover + exeName.Text;
             ModeSelect.SelectedIndex = 0;
             TopMost_Target.Checked = false;
-            checker.Enabled = true;
-            checker.Start();
+            //checker.Enabled = true;
+            //checker.Start();
         }
 
         private void ImageCapButton_Click(object sender, EventArgs e) {
@@ -190,18 +266,6 @@ namespace waifuinwindow {
             }
         }
 
-        private void Form1_DragDrop(object sender, DragEventArgs e) {
-            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop, false);
-            string fileName = files[0];
-            if (System.IO.Path.GetExtension(fileName) == ".lnk") fileName = ShortcutToFilePath(fileName);
-            else if (System.IO.Path.GetExtension(fileName) != ".exe") return;
-            exeName.Text = System.IO.Path.GetFileNameWithoutExtension(fileName);
-            string workDir = System.IO.Directory.GetCurrentDirectory();
-            System.IO.Directory.SetCurrentDirectory(System.IO.Path.GetDirectoryName(fileName));
-            System.Diagnostics.Process.Start(fileName);
-            System.IO.Directory.SetCurrentDirectory(workDir);
-        }
-        
         private string ShortcutToFilePath(string path) {
             // オブジェクトの生成、注意：WshShellClassでない
             IWshRuntimeLibrary.WshShell shell = new IWshRuntimeLibrary.WshShell();
@@ -212,14 +276,6 @@ namespace waifuinwindow {
 
             // リンク先ファイル
             return shortcut.TargetPath.ToString();
-        }
-
-        private void Form1_DragEnter(object sender, DragEventArgs e) {
-            if (e.Data.GetDataPresent(DataFormats.FileDrop)) {
-                e.Effect = DragDropEffects.All;
-            } else {
-                e.Effect = DragDropEffects.None;
-            }
         }
 
         private void AreaSelButton_Click(object sender, EventArgs e) {
@@ -250,17 +306,6 @@ namespace waifuinwindow {
             capturedImage.Image = screen[GetScreenId()];
         }
 
-        private void Form1_FormClosed(object sender, FormClosedEventArgs e) {
-            MainIni.PosX = this.Location.X;
-            MainIni.PosY = this.Location.Y;
-            MainIni.TopMost = this.TopMost;
-            try {
-                hotKey.Dispose();
-            }
-            catch { }
-            if (TopMost_Target.Checked) Target.SetWindowDispMode("NOTOPMOST");
-        }
-
         private void TweetText_KeyDown(object sender, KeyEventArgs e) {
             keydowncalled = false;
             if (e.KeyData == (Keys.Control | Keys.Enter)) {
@@ -274,6 +319,7 @@ namespace waifuinwindow {
         }
 
         private void TopMost_Target_CheckedChanged(object sender, EventArgs e) {
+            if (Target == null) return;
             if (TopMost_Target.Checked) Target.SetWindowDispMode("TOPMOST");
             else Target.SetWindowDispMode("NOTOPMOST");
         }
@@ -302,48 +348,6 @@ namespace waifuinwindow {
             } else if (hotKey != null) {
                 hotKey.Dispose();
             }
-        }
-
-        private void Form1_Load(object sender, EventArgs e) {
-            this.Location = new Point(MainIni.PosX, MainIni.PosY);
-            if (this.Location.X - 100 >= Program.DispSize.Width || this.Location.Y - 100 >= Program.DispSize.Height) {
-                this.Location = new Point(300, 300);
-            }
-            if (MainIni.TopMost) {
-                this.TopMost = true;
-                TopMost_Me.Checked = true;
-            }
-            if (!MainIni.Auth) {
-                TweetButton.Text = Properties.Resources.Noauth_button;
-                TweetStatus.Text = Properties.Resources.Noauth_status;
-            }
-            ModeSelect.SelectedIndex = 2;
-            Screen1.Select();
-            UpdateButton_Click(null, null);
-            if (MainIni.UseShortcut) SetHotkey();
-            checker.Interval = 5000;
-            checker.Tick += WindowCheck;
-        }
-
-        private void SetHotkey() {
-            KeysConverter convert = new KeysConverter();
-            MOD_KEY modKeys = 0;
-            if (MainIni.UseAlt) modKeys |= MOD_KEY.ALT;
-            if (MainIni.UseCtrl) modKeys |= MOD_KEY.CONTROL;
-            if (MainIni.UseShift) modKeys |= MOD_KEY.SHIFT;
-            hotKey = new HotKey(modKeys, (Keys)convert.ConvertFromString(MainIni.ShortcutKey));
-            hotKey.HotKeyPush += new EventHandler(ImageCapButton_Click);
-        }
-
-        private void WindowCheck(object sender, EventArgs e) {
-            foreach(Process check in Process.GetProcessesByName(exeName.Text)) {
-                if (check.MainWindowHandle == Target.handle) return;
-            }
-            StatusLabel.Text = Properties.Resources.Lost;
-            Target = null;
-            exeName.Text = "";
-            ModeSelect.SelectedIndex = 2;
-            checker.Stop();
         }
     }
 }
